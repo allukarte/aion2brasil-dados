@@ -22,6 +22,7 @@ SITE = "https://www.aion2brasil.com.br"
 AQUI = os.path.dirname(os.path.abspath(__file__))
 UA = "Mozilla/5.0 (robo-manutencao aion2brasil; +https://github.com/allukarte/aion2brasil-dados)"
 HOJE = dt.date.today()
+PARCEIROS = ("metabot.gg", "metaroad")  # autorizaram o uso dos dados: nem o link o robô confere
 
 TERMOS = [
     ("Mago (usar Feiticeiro)", r"\bMagos?\b"),
@@ -42,7 +43,7 @@ TERMOS = [(n, re.compile(p)) for n, p in TERMOS]
 def baixar(url, metodo="GET", tempo=25):
     for tentativa in range(4):
         st, b = _baixar(url, metodo, tempo)
-        if st != 429:
+        if st != 429 or not url.startswith(SITE):  # só espera e tenta de novo no nosso próprio blog
             return st, b
         time.sleep(20 * (tentativa + 1))  # o Blogger pediu calma
     return st, b
@@ -144,20 +145,18 @@ def main():
             return l, 200
         if l.startswith(SITE):
             time.sleep(1.5)
+        if any(d in l for d in PARCEIROS):
+            return l, 200  # sites parceiros: o robô não visita
         st, _ = baixar(l, "HEAD", 20)
-        if st in (403, 405, 400, 501) or isinstance(st, str):
+        if st in (405, 501):  # o site só não aceita HEAD; um GET e pronto
             st, _ = baixar(l, "GET", 25)
-        return l, st
+        return l, st  # recusou (403/429) ou demorou: anota e não insiste
 
     quebrados, bloqueados = [], []
     internos = [l for l in sorted(links) if l.startswith(SITE)]
     externos = [l for l in sorted(links) if not l.startswith(SITE)]
-    with cf.ThreadPoolExecutor(6) as ex:
+    with cf.ThreadPoolExecutor(3) as ex:
         res = [checar(l) for l in internos] + list(ex.map(checar, externos))
-    # quem deu tempo esgotado tenta de novo, um de cada vez e com mais paciência
-    for i, (l, st) in enumerate(res):
-        if isinstance(st, str) and "Timeout" in st:
-            res[i] = (l, baixar(l, "GET", 60)[0])
     if True:
         for l, st in res:
             if st in (404, 410) or (isinstance(st, str) and "URLError" in st):
