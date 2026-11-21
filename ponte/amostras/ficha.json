@@ -1,0 +1,1046 @@
+{
+  "info": {
+    "profile": {
+      "characterId": "H8WHJE_su6dZM2K913s8qnCd8nI-YLYwpd4BCDUpYAg=",
+      "characterLevel": 45,
+      "characterName": "Myrae",
+      "className": "Assassino",
+      "combatPower": 208267,
+      "gender": 2,
+      "genderName": "Feminino",
+      "pcId": 20,
+      "profileImage": "https://profileimg.plaync.com/game_profile_images/aion2global/images?gameServerKey=2401&charKey=675821419082579430",
+      "raceId": 2,
+      "raceName": "Asmodiano",
+      "regionName": "CAHOS",
+      "serverId": 2401,
+      "serverName": "Israphel",
+      "titleGrade": "Unique",
+      "titleId": 23020043,
+      "titleName": "Pisando em Asas Brancas"
+    },
+    "stat": {
+      "statList": [
+        {
+          "name": "Poder",
+          "statSecondList": [
+            "Aumento de Ataque +3.1%"
+          ],
+          "type": "STR",
+          "value": 31
+        },
+        {
+          "name": "Agilidade",
+          "statSecondList": [
+            "Aumento de Evasão +3.3%",
+            "Aumento de Bloqueio +3.3%",
+            "Aumento de Resistência a Acerto Crítico +3.3%"
+          ],
+          "type": "DEX",
+          "value": 33
+        },
+        {
+          "name": "Inteligência",
+          "statSecondList": null,
+          "type": "INT",
+          "value": 0
+        },
+        {
+          "name": "Vitalidade",
+          "statSecondList": [
+            "Aumento de PV +0.9%"
+          ],
+          "type": "CON",
+          "value": 9
+        },
+        {
+          "name": "Exatidão",
+          "statSecondList": [
+            "Aumento de Precisão +1.2%",
+            "Aumento de Acerto Crítico +1.2%"
+          ],
+          "type": "AGI",
+          "value": 12
+        },
+        {
+          "name": "Determinação",
+          "statSecondList": null,
+          "type": "WIS",
+          "value": 0
+        },
+        {
+          "name": "Justiça [Nezekan]",
+          "statSecondList": [
+            "Aumento de Defesa +7.4%",
+            "Acerto Perfeito +7.4%"
+          ],
+          "type": "Justice",
+          "value": 74
+        },
+        {
+          "name": "Liberdade [Vaizel]",
+          "statSecondList": [
+            "Aumento de Precisão +3.8%",
+            "Aumento de Evasão +3.8%"
+          ],
+          "type": "Freedom",
+          "value": 38
+        },
+        {
+          "name": "Ilusão [Kaisinel]",
+          "statSecondList": [
+            "Tempo de recarga -5.3%",
+            "Penetração de Solidez +5.3%"
+          ],
+          "type": "Illusion",
+          "value": 53
+        },
+        {
+          "name": "Vida [Yustiel]",
+          "statSecondList": [
+            "Aumento de PV +6.1%",
+            "Regeneração +6.1%"
+          ],
+          "type": "Life",
+          "value": 61
+        },
+        {
+          "name": "Tempo [Siel]",
+          "statSecondList": [
+            "Velocidade de Combate +7.5%",
+            "Resistência a Golpe Potente +7.5%"
+          ],
+          "type": "Time",
+          "value": 75
+        },
+        {
+          "name": "Destruição [Zikel]",
+          "statSecondList": [
+            "Aumento de Ataque +5.1%",
+            "Resistência a Acerto Perfeito +5.1%"
+          ],
+          "type": "Destruction",
+          "value": 51
+        },
+        {
+          "name": "Morte [Triniel]",
+          "statSecondList": [
+            "Aumento de Acerto Crítico +6.1%",
+            "Penetração de Regeneração +6.1%"
+          ],
+          "type": "Death",
+          "value": 61
+        },
+        {
+          "name": "Sabedoria [Lumiel]",
+          "statSecondList": [
+            "Consumo de PM -3.6%",
+            "Golpe Potente +3.6%"
+          ],
+          "type": "Wisdom",
+          "value": 36
+        },
+        {
+          "name": "Destino [Marchutan]",
+          "statSecondList": [
+            "Aumento de PM +3.8%",
+            "Solidez +3.8%"
+          ],
+          "type": "Destiny",
+          "value": 38
+        },
+        {
+          "name": "Espaço [Israphel]",
+          "statSecondList": [
+            "Velocidade de Movimento +3.8%",
+            "Aumento de Bloqueio +3.8%"
+          ],
+          "type": "Space",
+          "value": 38
+        },
+        {
+          "name": "아이템레벨",
+          "statSecondList": null,
+          "type": "ItemLevel",
+          "value": 3050
+        }
+      ]
+    },
+    "title": {
+      "ownedCount": 263,
+      "titleList": [
+        {
+          "equipCategory": "Etc",
+          "equipStatList": [
+            {
+              "desc": "Redução de Tempo de Recarga +3%"
+            },
+            {
+              "desc": "PV +900"
+            },
+            {
+              "desc": "Vigor +225"
+            }
+          ],
+          "grade": "Unique",
+          "id": 22010061,
+          "name": "Do Inferno e de Volta",
+          "ownedCount": 86,
+          "ownedPercent": 84,
+          "statList": [
+            {
+              "desc": "Bloqueio +10"
+            }
+          ],
+          "totalCount": 102
+        },
+        {
+          "equipCategory": "Defense",
+          "equipStatList": [
+            {
+              "desc": "Defesa Adicional +300"
+            },
+            {
+              "desc": "Tolerância a Dano +3%"
+            },
+            {
+              "desc": "Bloqueio +100"
+            }
+          ],
+          "grade": "Unique",
+          "id": 22030003,
+          "name": "Santidade de Altgard",
+          "ownedCount": 86,
+          "ownedPercent": 87,
+          "statList": [
+            {
+              "desc": "PM +20"
+            }
+          ],
+          "totalCount": 99
+        },
+        {
+          "equipCategory": "Attack",
+          "equipStatList": [
+            {
+              "desc": "Amplificação de Dano em JvA +4.5%"
+            },
+            {
+              "desc": "Ataque Adicional +34"
+            },
+            {
+              "desc": "Acerto Crítico +68"
+            }
+          ],
+          "grade": "Unique",
+          "id": 23010021,
+          "name": "Livre das Amarras da Raça",
+          "ownedCount": 91,
+          "ownedPercent": 86,
+          "statList": [
+            {
+              "desc": "Amplificação de Dano em JvA +1%"
+            }
+          ],
+          "totalCount": 106
+        }
+      ],
+      "totalCount": 307
+    },
+    "ranking": {
+      "rankingList": null
+    },
+    "daevanion": {
+      "boardList": [
+        {
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Weapon_Sword_1H.png",
+          "id": 41,
+          "name": "Nezekan",
+          "open": 1,
+          "openNodeCount": 70,
+          "openPercent": 80,
+          "totalNodeCount": 88
+        },
+        {
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Weapon_Mace.png",
+          "id": 42,
+          "name": "Zikel",
+          "open": 1,
+          "openNodeCount": 64,
+          "openPercent": 73,
+          "totalNodeCount": 88
+        },
+        {
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Weapon_Sword_1H.png",
+          "id": 43,
+          "name": "Vaizel",
+          "open": 1,
+          "openNodeCount": 55,
+          "openPercent": 63,
+          "totalNodeCount": 88
+        },
+        {
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Weapon_Mace.png",
+          "id": 44,
+          "name": "Triniel",
+          "open": 1,
+          "openNodeCount": 75,
+          "openPercent": 65,
+          "totalNodeCount": 116
+        },
+        {
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Weapon_Sword_1H.png",
+          "id": 45,
+          "name": "Ariel",
+          "open": 1,
+          "openNodeCount": 112,
+          "openPercent": 74,
+          "totalNodeCount": 152
+        },
+        {
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Weapon_Mace.png",
+          "id": 46,
+          "name": "Azphel",
+          "open": 1,
+          "openNodeCount": 22,
+          "openPercent": 14,
+          "totalNodeCount": 152
+        }
+      ]
+    }
+  },
+  "equip": {
+    "equipment": {
+      "equipmentList": [
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 4,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_WP_DA_0100_T06.png",
+          "id": 110330105,
+          "name": "Adaga do Lorde Dragão Sombrio Brilhante",
+          "slotPos": 1,
+          "slotPosName": "MainHand"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 3,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Weapon_Guarder_L_012.png",
+          "id": 115030053,
+          "name": "Guarda-braço de Nuakum",
+          "slotPos": 2,
+          "slotPosName": "SubHand"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Torso.png",
+          "id": 210130053,
+          "name": "Peitoral de Nuakum",
+          "slotPos": 5,
+          "slotPosName": "Torso"
+        },
+        {
+          "enchantLevel": 10,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Pants.png",
+          "id": 210230053,
+          "name": "Grevas de Nuakum",
+          "slotPos": 6,
+          "slotPosName": "Pants"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 1,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Helmet.png",
+          "id": 210330053,
+          "name": "Elmo de Nuakum",
+          "slotPos": 3,
+          "slotPosName": "Helmet"
+        },
+        {
+          "enchantLevel": 10,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Shoulder.png",
+          "id": 210430053,
+          "name": "Espaldeiras de Nuakum",
+          "slotPos": 4,
+          "slotPosName": "Shoulder"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 1,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Gloves.png",
+          "id": 210530053,
+          "name": "Luvas de Nuakum",
+          "slotPos": 7,
+          "slotPosName": "Gloves"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Boots.png",
+          "id": 210630053,
+          "name": "Botas de Nuakum",
+          "slotPos": 8,
+          "slotPosName": "Boots"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 1,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Equip_AR_L_Idris_01_Cape.png",
+          "id": 210730053,
+          "name": "Capa de Nuakum",
+          "slotPos": 19,
+          "slotPosName": "Cape"
+        },
+        {
+          "enchantLevel": 10,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Acc_Belt_C_022.png",
+          "id": 215230001,
+          "name": "Cinto Nobre",
+          "slotPos": 17,
+          "slotPosName": "Belt"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 2,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_NL_0053.png",
+          "id": 310130051,
+          "name": "Colar de Kromede Furiosa",
+          "slotPos": 10,
+          "slotPosName": "Necklace"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 2,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_ER_0053.png",
+          "id": 310230053,
+          "name": "Brinco de Kromede Furiosa",
+          "slotPos": 12,
+          "slotPosName": "Earring2"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 2,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_ER_0053.png",
+          "id": 310230053,
+          "name": "Brinco de Kromede Furiosa",
+          "slotPos": 11,
+          "slotPosName": "Earring1"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 2,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_Ring_0053.png",
+          "id": 310330053,
+          "name": "Anel de Kromede Furiosa",
+          "slotPos": 14,
+          "slotPosName": "Ring2"
+        },
+        {
+          "enchantLevel": 15,
+          "exceedLevel": 2,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_Ring_0035.png",
+          "id": 310330118,
+          "name": "Anel do Lorde Dragão Negro Brilhante",
+          "slotPos": 13,
+          "slotPosName": "Ring1"
+        },
+        {
+          "enchantLevel": 12,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Acc_Bracelet_R_027.png",
+          "id": 310430047,
+          "name": "Bracelete da Ascensão",
+          "slotPos": 15,
+          "slotPosName": "Bracelet1"
+        },
+        {
+          "enchantLevel": 10,
+          "exceedLevel": 0,
+          "grade": "Legend",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_Bracelet_0071.png",
+          "id": 310440018,
+          "name": "Bracelete do Libertador",
+          "slotPos": 16,
+          "slotPosName": "Bracelet2"
+        },
+        {
+          "enchantLevel": 4,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Acc_Rune_R_002.png",
+          "id": 310900001,
+          "name": "Runa do Confronto",
+          "slotPos": 23,
+          "slotPosName": "Rune1"
+        },
+        {
+          "enchantLevel": 3,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Acc_Rune_R_002.png",
+          "id": 310900001,
+          "name": "Runa do Confronto",
+          "slotPos": 24,
+          "slotPosName": "Rune2"
+        },
+        {
+          "enchantLevel": 10,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Item_Craft_Conversion_Crystal_L_lv5_01.png",
+          "id": 311030001,
+          "name": "Amuleto da Revelação",
+          "slotPos": 22,
+          "slotPosName": "Amulet"
+        },
+        {
+          "enchantLevel": 4,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Arcana_Card_Grail_u_PveSet2.png",
+          "id": 810130001,
+          "name": "Cálice do Vigor",
+          "slotPos": 41,
+          "slotPosName": "Arcana1"
+        },
+        {
+          "enchantLevel": 5,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Arcana_Card_Parchment_u_PveSet2.png",
+          "id": 810230001,
+          "name": "Manuscrito do Vigor",
+          "slotPos": 42,
+          "slotPosName": "Arcana2"
+        },
+        {
+          "enchantLevel": 3,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Arcana_Card_Compass_u_DefenceSet2.png",
+          "id": 810330002,
+          "name": "Bússola da Mana",
+          "slotPos": 43,
+          "slotPosName": "Arcana3"
+        },
+        {
+          "enchantLevel": 3,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Arcana_Card_Bell_u_PveSet2.png",
+          "id": 810430001,
+          "name": "Sino do Vigor",
+          "slotPos": 44,
+          "slotPosName": "Arcana4"
+        },
+        {
+          "enchantLevel": 4,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_Arcana_Card_Mirror_u_PveSet2.png",
+          "id": 810530001,
+          "name": "Espelho do Vigor",
+          "slotPos": 45,
+          "slotPosName": "Arcana5"
+        }
+      ],
+      "skinList": [
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Unique",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_WP_DA_0041_T06.png",
+          "id": 10041103,
+          "name": "Dominador do Fogo (Adaga)",
+          "slotPos": 11,
+          "slotPosName": "DaggerMain"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Legend",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_NL_0071.png",
+          "id": 50071103,
+          "name": "Melodia da Luz (Colar)",
+          "slotPos": 22,
+          "slotPosName": "Necklace"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GF_Halloween_01_Pants.png",
+          "id": 40098102,
+          "name": "Sugador de Sangue (Grevas)",
+          "slotPos": 4,
+          "slotPosName": "Pants"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GF_Halloween_01_Torso.png",
+          "id": 40098101,
+          "name": "Sugador de Sangue (Peitoral)",
+          "slotPos": 3,
+          "slotPosName": "Torso"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Legend",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GM_0072_T05_Shoulder.png",
+          "id": 30072104,
+          "name": "Guardião da Pluma Celestial (Espaldeira)",
+          "slotPos": 2,
+          "slotPosName": "Shoulder"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GF_Halloween_01_Cape.png",
+          "id": 40098107,
+          "name": "Sugador de Sangue (Capa)",
+          "slotPos": 7,
+          "slotPosName": "Cape"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GF_Halloween_01_Boots.png",
+          "id": 40098106,
+          "name": "Sugador de Sangue (Botas)",
+          "slotPos": 6,
+          "slotPosName": "Boots"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GF_Halloween_01_Gloves.png",
+          "id": 40098105,
+          "name": "Sugador de Sangue (Luvas)",
+          "slotPos": 5,
+          "slotPosName": "Gloves"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Legend",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_ACC_ER_0071.png",
+          "id": 50071101,
+          "name": "Melodia da Luz (Brinco)",
+          "slotPos": 21,
+          "slotPosName": "EarringR"
+        },
+        {
+          "enchantLevel": 0,
+          "exceedLevel": 0,
+          "grade": "Special",
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_GF_Halloween_01_Helmet.png",
+          "id": 40098103,
+          "name": "Sugador de Sangue (Elmo)",
+          "slotPos": 1,
+          "slotPosName": "Helmet"
+        }
+      ]
+    },
+    "petwing": {
+      "pet": {
+        "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/UT_Vehicle_Portrait_Spider_01_V01.png",
+        "id": 1117,
+        "level": 3,
+        "name": "Aranha Instável"
+      },
+      "wing": {
+        "enchantLevel": 0,
+        "grade": "Unique",
+        "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_WingB_019.png",
+        "id": 40201900,
+        "name": "Asas de Véu da Escuridão"
+      },
+      "wingSkin": {
+        "enchantLevel": 0,
+        "grade": "Unique",
+        "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/Icon_WingD_003.png",
+        "id": 40400300,
+        "name": "Asas do Amor Radiante"
+      }
+    },
+    "skill": {
+      "skillList": [
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_001.png",
+          "id": 13010000,
+          "name": "Corte Rápido",
+          "needLevel": 1,
+          "skillLevel": 22
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_009.png",
+          "id": 13100000,
+          "name": "Rugido da Besta",
+          "needLevel": 1,
+          "skillLevel": 20
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_007.png",
+          "id": 13070000,
+          "name": "Ataque Sigiloso",
+          "needLevel": 1,
+          "skillLevel": 14
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_006.png",
+          "id": 13060000,
+          "name": "Emboscada",
+          "needLevel": 3,
+          "skillLevel": 15
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_035.png",
+          "id": 13350000,
+          "name": "Estocada no Coração",
+          "needLevel": 4,
+          "skillLevel": 20
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_034.png",
+          "id": 13340000,
+          "name": "Desenfreio da Tempestade",
+          "needLevel": 5,
+          "skillLevel": 16
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_019.png",
+          "id": 13210000,
+          "name": "Corte do Tornado",
+          "needLevel": 7,
+          "skillLevel": 14
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_005.png",
+          "id": 13050000,
+          "name": "Corte do Clarão",
+          "needLevel": 8,
+          "skillLevel": 14
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_036.png",
+          "id": 13360000,
+          "name": "Infiltração",
+          "needLevel": 10,
+          "skillLevel": 14
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_020.png",
+          "id": 13220000,
+          "name": "Queda da Sombra",
+          "needLevel": 12,
+          "skillLevel": 3
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_013.png",
+          "id": 13130000,
+          "name": "Explosão de Insígnia",
+          "needLevel": 14,
+          "skillLevel": 16
+        },
+        {
+          "acquired": 1,
+          "category": "Active",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_CO_SKILL_002.png",
+          "id": 13260000,
+          "name": "Remoção de Impacto",
+          "needLevel": 16,
+          "skillLevel": 2
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_001.png",
+          "id": 13710000,
+          "name": "Sexto Sentido Aguçado",
+          "needLevel": 1,
+          "skillLevel": 15
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_002.png",
+          "id": 13720000,
+          "name": "Exploração de Fraqueza",
+          "needLevel": 6,
+          "skillLevel": 21
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_003.png",
+          "id": 13730000,
+          "name": "Aplicação de Veneno",
+          "needLevel": 9,
+          "skillLevel": 12
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_004.png",
+          "id": 13740000,
+          "name": "Golpe Potente pela Retaguarda",
+          "needLevel": 11,
+          "skillLevel": 15
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_006.png",
+          "id": 13750000,
+          "name": "Postura de Ataque Súbito",
+          "needLevel": 13,
+          "skillLevel": 17
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_011.png",
+          "id": 13760000,
+          "name": "Acerto de Impacto",
+          "needLevel": 15,
+          "skillLevel": 16
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_007.png",
+          "id": 13770000,
+          "name": "Postura de Emboscada",
+          "needLevel": 17,
+          "skillLevel": 16
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_008.png",
+          "id": 13780000,
+          "name": "Fenda da Defesa",
+          "needLevel": 21,
+          "skillLevel": 18
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_009.png",
+          "id": 13790000,
+          "name": "Pacto de Revitalização",
+          "needLevel": 23,
+          "skillLevel": 4
+        },
+        {
+          "acquired": 1,
+          "category": "Passive",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_Passive_010.png",
+          "id": 13800000,
+          "name": "Prontidão",
+          "needLevel": 25,
+          "skillLevel": 17
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_025.png",
+          "id": 13270000,
+          "name": "Presa da Besta",
+          "needLevel": 22,
+          "skillLevel": 20
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_037.png",
+          "id": 13390000,
+          "name": "Pacto da Celeridade",
+          "needLevel": 22,
+          "skillLevel": 20
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_023.png",
+          "id": 13250000,
+          "name": "Granada de Fumaça",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 0,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_024.png",
+          "id": 13080000,
+          "name": "Postura de Evasão",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_022.png",
+          "id": 13280000,
+          "name": "Corte Espiral",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 0,
+          "category": "Dp",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_016.png",
+          "id": 13180000,
+          "name": "Caminhada nas Sombras",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_031.png",
+          "id": 13020000,
+          "name": "Lançamento de Espada Sombria",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_028.png",
+          "id": 13300000,
+          "name": "Punhal de Triniel",
+          "needLevel": 22,
+          "skillLevel": 20
+        },
+        {
+          "acquired": 0,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_026.png",
+          "id": 13230000,
+          "name": "Atadura Aérea",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 1,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_029.png",
+          "id": 13310000,
+          "name": "Clone Ilusório",
+          "needLevel": 22,
+          "skillLevel": 20
+        },
+        {
+          "acquired": 0,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_039.png",
+          "id": 13370000,
+          "name": "Pacto da Evasão",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 0,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_CO_SKILL_003.png",
+          "id": 13700000,
+          "name": "Investida Súbita",
+          "needLevel": 22,
+          "skillLevel": 0
+        },
+        {
+          "acquired": 1,
+          "category": "Dp",
+          "equip": 0,
+          "icon": "https://assets.playnccdn.com/static-aion2-gamedata/resources/ICON_AS_SKILL_014.png",
+          "id": 13140000,
+          "name": "Passo Sombrio",
+          "needLevel": 22,
+          "skillLevel": 0
+        }
+      ]
+    }
+  }
+}
