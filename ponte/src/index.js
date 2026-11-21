@@ -27,6 +27,18 @@ async function oficial(url) {
   if (!r.ok) throw new Error("site oficial respondeu " + r.status);
   return r.json();
 }
+const CLASSE = { GLADIATOR: "Gladiador", TEMPLAR: "Templário", ASSASSIN: "Assassino", RANGER: "Arqueiro", SORCERER: "Feiticeiro", ELEMENTALIST: "Espiritualista", CLERIC: "Clérigo", CHANTER: "Encantador" };
+let PC = null;
+async function classes() {
+  if (PC) return PC;
+  try {
+    const d = await fetch(SITE + "/pt-br/api/gameinfo/pcdata?" + qs(BASE), { headers: { "User-Agent": UA, Accept: "application/json" }, cf: { cacheTtl: 86400 } }).then((r) => r.json());
+    PC = {};
+    (d.pcDataList || []).forEach((p) => { PC[p.id] = CLASSE[String(p.className).toUpperCase()] || p.className; });
+  } catch (e) { PC = {}; }
+  return PC;
+}
+function limpa(t) { return String(t || "").replace(/<[^>]*>/g, ""); }
 function qs(o) { return new URLSearchParams(o).toString(); }
 
 export default {
@@ -51,10 +63,10 @@ export default {
         const p = { keyword: nome, page: "1", size: "30", region: BASE.region, localeInfo: BASE.lang };
         const sv = u.searchParams.get("servidor");
         if (sv && /^\d{4}$/.test(sv)) p.serverId = sv;
-        const d = await oficial(BUSCA + "?" + qs(p));
+        const [d, pc] = await Promise.all([oficial(BUSCA + "?" + qs(p)), classes()]);
         saida = resposta({ total: d.pagination ? d.pagination.total : 0, lista: (d.list || []).map((x) => ({
-          id: decodeURIComponent(x.characterId || ""), nome: x.name, servidor: x.serverId, nomeServidor: x.serverName,
-          classe: x.className, pcId: x.pcId, raca: x.race, nivel: x.level,
+          id: decodeURIComponent(x.characterId || ""), nome: limpa(x.name), servidor: x.serverId, nomeServidor: limpa(x.serverName),
+          classe: pc[x.pcId] || "", pcId: x.pcId, raca: x.race, nivel: x.level,
           foto: x.profileImageUrl ? "https://profileimg.plaync.com" + x.profileImageUrl : "",
         })) }, 200, origem, 600);
       } else if (u.pathname === "/ficha") {
