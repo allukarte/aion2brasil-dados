@@ -246,7 +246,7 @@ func cps(sv []aion2.Server) {
 	var mu sync.Mutex
 	jobs := make(chan alvo)
 	var wg sync.WaitGroup
-	for w := 0; w < 3; w++ {
+	for w := 0; w < 6; w++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
