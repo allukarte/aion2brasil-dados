@@ -32,6 +32,7 @@ type Pers struct {
 	G  string `json:"g,omitempty"` // legião
 	Q  string `json:"q,omitempty"` // dia da última consulta do CP (AAAA-MM-DD)
 	V  string `json:"v"`           // dia em que apareceu na lista
+	M  string `json:"m,omitempty"` // último dia em que o CP mudou (sinal de que a pessoa está jogando)
 }
 
 type Servidor struct {
@@ -116,6 +117,10 @@ func main() {
 	c, err = aion2.New(aion2.ConfigOpts{Region: aion2.RegionSA, Locale: aion2.LocalePTBR, RateLimit: 2.5})
 	if err != nil {
 		panic(err)
+	}
+	if modo == "patch" {
+		patch()
+		return
 	}
 	sv, err := c.Servers(ctx)
 	if err != nil {
@@ -256,6 +261,9 @@ func cps(sv []aion2.Server) {
 				p := all[a.s].P[a.id]
 				p.Q = hoje
 				if err == nil {
+					if p.CP > 0 && ch.Profile.CombatPower != p.CP {
+						p.M = hoje
+					}
 					p.CP, p.T, p.G, p.L, p.N = ch.Profile.CombatPower, ch.Profile.TitleName, ch.Profile.GuildName, ch.Profile.Level, ch.Profile.Name
 					n++
 					if n%2000 == 0 {
@@ -346,6 +354,208 @@ func saida(sv []aion2.Server) {
 		geral = geral[:300]
 	}
 	gravar("site/ranking/geral.json", geral, false)
+	censoCompleto(sv)
 	gravar("site/censo.json", cen, false)
 	gravar("site/indice.json", idx, true)
+}
+
+// patch: lê as últimas notas de atualização e avisos oficiais (em português) e anota as novas
+func patch() {
+	type nota struct {
+		ID     string `json:"id"`
+		Tipo   string `json:"tipo"`
+		Titulo string `json:"titulo"`
+		Resumo string `json:"resumo"`
+		Data   string `json:"data"`
+		Link   string `json:"link"`
+	}
+	vistos := map[string]bool{}
+	primeira := !ler("estado/patch-vistos.json", &vistos)
+	if vistos == nil {
+		vistos = map[string]bool{}
+	}
+	var lista, novos []nota
+	quadros := []struct {
+		b    aion2.Board
+		nome string
+	}{{aion2.BoardPatchNotes, "Atualização"}, {aion2.BoardNotices, "Aviso"}, {aion2.BoardDevNews, "Notícia"}}
+	for _, q := range quadros {
+		n := 0
+		for p, err := range c.Posts(ctx, q.b) {
+			if err != nil {
+				fmt.Println("erro", q.nome, err)
+				break
+			}
+			r := []rune(strings.TrimSpace(p.Summary))
+			if len(r) > 280 {
+				r = append(r[:277], []rune("...")...)
+			}
+			x := nota{p.ID, q.nome, strings.TrimSpace(p.Title), string(r), p.PostedAt.Format("2006-01-02"), "https://aion2.plaync.com/pt-br/board/" + string(q.b) + "/view?articleId=" + p.ID}
+			lista = append(lista, x)
+			if !vistos[p.ID] {
+				vistos[p.ID] = true
+				if !primeira {
+					novos = append(novos, x)
+				}
+			}
+			n++
+			if n >= 15 {
+				break
+			}
+		}
+	}
+	if len(lista) == 0 {
+		fmt.Println("nenhuma nota lida")
+		os.Exit(1)
+	}
+	sort.SliceStable(lista, func(i, j int) bool { return lista[i].Data > lista[j].Data })
+	gravar("site/patch.json", map[string]any{"atualizado": time.Now().UTC().Format(time.RFC3339), "notas": lista}, false)
+	gravar("estado/patch-vistos.json", vistos, false)
+	gravar("novos-avisos.json", novos, false)
+	fmt.Println("notas", len(lista), "novas", len(novos), "primeira", primeira)
+}
+
+// censoCompleto: os mesmos blocos da página Censo LatAm, montados com a lista oficial
+func censoCompleto(sv []aion2.Server) {
+	nomeCl := map[int]string{2: "Gladiador", 3: "Templário", 4: "Arqueiro", 5: "Assassino", 6: "Espiritualista", 7: "Feiticeiro", 8: "Clérigo", 9: "Encantador"}
+	fac := func(r int) string {
+		if r == 1 {
+			return "E"
+		}
+		return "A"
+	}
+	hist := map[string][]int{} // "classe|E/A/T" -> CP de cada nível 45 consultado
+	cls := map[string]map[string]int{}
+	niv := map[string]map[string]int{"E": {}, "A": {}}
+	type leg struct {
+		srv, nome string
+		n, cp     int
+	}
+	legs := map[string]*leg{}
+	tit := map[string][]int{}
+	ativos := map[string]int{"E": 0, "A": 0}
+	var srv [][]any
+	for _, s := range sv {
+		var S Servidor
+		if !ler(arq(s), &S) || len(S.P) == 0 {
+			continue
+		}
+		f := fac(s.RaceID)
+		porCl := map[int]int{}
+		n45 := 0
+		legS := map[string]int{}
+		for _, p := range S.P {
+			nc := nomeCl[p.C]
+			if cls[nc] == nil {
+				cls[nc] = map[string]int{}
+			}
+			cls[nc][f]++
+			porCl[p.C]++
+			switch {
+			case p.L >= 45:
+				niv[f]["45"]++
+				n45++
+			case p.L >= 30:
+				niv[f]["30-44"]++
+			case p.L >= 10:
+				niv[f]["10-29"]++
+			default:
+				niv[f]["1-9"]++
+			}
+			if p.L < 45 || p.CP <= 0 || p.Q == "" || dias(p.Q) > 30 {
+				continue
+			}
+			if p.M != "" && dias(p.M) <= 30 {
+				ativos[f]++
+			}
+			for _, k := range []string{nc + "|" + f, nc + "|T", "|" + f, "|T"} {
+				hist[k] = append(hist[k], p.CP)
+			}
+			if p.G != "" {
+				k := fmt.Sprint(s.ServerID, "|", p.G)
+				if legs[k] == nil {
+					legs[k] = &leg{srv: s.Name, nome: p.G}
+				}
+				legs[k].n++
+				legs[k].cp += p.CP
+				legS[p.G] += p.CP
+			}
+			if p.T != "" {
+				if tit[p.T] == nil {
+					tit[p.T] = []int{0, 0}
+				}
+				if f == "E" {
+					tit[p.T][0]++
+				} else {
+					tit[p.T][1]++
+				}
+			}
+		}
+		top, topN := 0, -1
+		for k, v := range porCl {
+			if v > topN {
+				top, topN = k, v
+			}
+		}
+		lg, lcp := "", 0
+		for k, v := range legS {
+			if v > lcp {
+				lg, lcp = k, v
+			}
+		}
+		srv = append(srv, []any{s.Name, s.ServerID, s.RaceID, len(S.P), len(legS), nomeCl[top], lg, lcp, n45})
+	}
+	// P: [quantos, depois por mil com CP >= 0, 10 mil, 20 mil ... 300 mil]
+	P := map[string][]int{}
+	for k, v := range hist {
+		a := []int{len(v)}
+		for i := 0; i <= 30; i++ {
+			c := 0
+			for _, x := range v {
+				if x >= i*10000 {
+					c++
+				}
+			}
+			a = append(a, (c*1000+len(v)/2)/len(v))
+		}
+		P[k] = a
+	}
+	var L []*leg
+	for _, l := range legs {
+		L = append(L, l)
+	}
+	sort.Slice(L, func(i, j int) bool { return L[i].cp > L[j].cp })
+	var legOut [][]any
+	for i, l := range L {
+		if i >= 10 {
+			break
+		}
+		legOut = append(legOut, []any{l.srv, l.nome, l.n, l.cp})
+	}
+	type tt struct {
+		t string
+		v []int
+	}
+	var T []tt
+	for k, v := range tit {
+		T = append(T, tt{k, v})
+	}
+	sort.Slice(T, func(i, j int) bool { return T[i].v[0]+T[i].v[1] > T[j].v[0]+T[j].v[1] })
+	var titOut [][]any
+	for i, t := range T {
+		if i >= 10 {
+			break
+		}
+		titOut = append(titOut, []any{t.t, t.v})
+	}
+	gravar("site/censo-completo.json", map[string]any{
+		"atualizado": time.Now().UTC().Format(time.RFC3339),
+		"srv":        srv,    // [servidor, id, raça, personagens, legiões, classe mais jogada, legião mais forte, CP dela, nível 45]
+		"cls":        cls,    // classe -> {E, A} (todos os níveis)
+		"niveis":     niv,    // facção -> faixa de nível -> quantos
+		"P":          P,      // "classe|E/A/T" -> [nível 45 com CP, por mil com CP >= 0, 10 mil ... 300 mil]
+		"legs":       legOut, // [servidor, legião, membros nível 45, soma do CP]
+		"titles":     titOut, // [título, [Elyos, Asmodianos]]
+		"ativos":     ativos, // nível 45 cujo CP mudou nos últimos 30 dias
+	}, false)
 }

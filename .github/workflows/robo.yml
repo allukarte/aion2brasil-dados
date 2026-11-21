@@ -43,5 +43,5 @@ jobs:
           git config user.email "robo-aion2brasil@users.noreply.github.com"
           git add -A .
           git commit -m "Robô: dados de $(date -u +%F)" || exit 0
-          git pull --rebase -X ours origin main || true
+          git pull --rebase -X theirs origin main || true
           git push

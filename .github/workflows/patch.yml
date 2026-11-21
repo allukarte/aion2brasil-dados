@@ -1,0 +1,44 @@
+name: patch
+on:
+  schedule:
+    - cron: '37 */2 * * *'   # a cada 2 horas
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency: patch
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+          cache: false
+      - name: Ler notas oficiais
+        working-directory: robo
+        run: |
+          go get github.com/nuriland/aion2-api@latest
+          go mod tidy
+          go build -o ../robo-bin .
+          cd .. && ./robo-bin patch
+      - name: Avisar (abre uma issue por nota nova; o GitHub manda e-mail e aviso no app)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -s novos-avisos.json ] || exit 0
+          jq -c '.[]?' novos-avisos.json | while read -r x; do
+            t=$(jq -r '"[" + .tipo + "] " + .titulo' <<<"$x")
+            b=$(jq -r '"**" + .titulo + "**\n\n" + .resumo + "\n\nPublicado em " + .data + "\n\n" + .link' <<<"$x")
+            gh issue create --title "$t" --body "$b" || true
+          done
+      - name: Guardar
+        run: |
+          git config user.name "robo-aion2brasil"
+          git config user.email "robo-aion2brasil@users.noreply.github.com"
+          git add -A site/patch.json estado/patch-vistos.json
+          git commit -m "Patch: notas de $(date -u +'%F %H:%M')" || exit 0
+          git pull --rebase -X theirs origin main || true
+          git push
