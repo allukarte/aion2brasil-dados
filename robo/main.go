@@ -308,12 +308,12 @@ func saida(sv []aion2.Server) {
 		sort.Slice(L, func(i, j int) bool { return L[i].CP > L[j].CP })
 		top := []linha{}
 		porc := map[int]int{}
-		for _, p := range L {
+		for i, p := range L {
 			if len(top) < 100 || porc[p.C] < 50 {
 				top = append(top, linha{p.N, p.C, p.CP, p.T, p.G})
 				porc[p.C]++
 			}
-			if len(geral) < 5000 {
+			if i < 300 {
 				geral = append(geral, linha{p.N, p.C, p.CP, p.T, p.G, s.ServerID})
 			}
 		}
