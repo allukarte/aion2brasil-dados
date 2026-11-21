@@ -1,0 +1,28 @@
+name: manutencao
+on:
+  schedule:
+    - cron: '23 11 * * 1'   # toda segunda, 08:23 em Brasília
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency: manutencao
+jobs:
+  checar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir o blog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 manutencao/checar.py
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "robo-aion2brasil"
+          git config user.email "robo-aion2brasil@users.noreply.github.com"
+          git add -A manutencao
+          git commit -m "Manutenção: relatório de $(date -u +%F)" || exit 0
+          git pull --rebase -X theirs origin main || true
+          git push
