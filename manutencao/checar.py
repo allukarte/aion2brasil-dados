@@ -15,6 +15,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 SITE = "https://www.aion2brasil.com.br"
@@ -48,6 +49,7 @@ def baixar(url, metodo="GET", tempo=25):
 
 
 def _baixar(url, metodo="GET", tempo=25):
+    url = urllib.parse.quote(url, safe=":/?#[]@!$&'()*+,;=%~")
     req = urllib.request.Request(url, method=metodo, headers={"User-Agent": UA, "Accept-Language": "pt-BR"})
     try:
         with urllib.request.urlopen(req, timeout=tempo) as r:
@@ -152,6 +154,10 @@ def main():
     externos = [l for l in sorted(links) if not l.startswith(SITE)]
     with cf.ThreadPoolExecutor(6) as ex:
         res = [checar(l) for l in internos] + list(ex.map(checar, externos))
+    # quem deu tempo esgotado tenta de novo, um de cada vez e com mais paciência
+    for i, (l, st) in enumerate(res):
+        if isinstance(st, str) and "Timeout" in st:
+            res[i] = (l, baixar(l, "GET", 60)[0])
     if True:
         for l, st in res:
             if st in (404, 410) or (isinstance(st, str) and "URLError" in st):
