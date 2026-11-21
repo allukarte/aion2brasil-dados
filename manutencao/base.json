@@ -1,0 +1,348 @@
+{
+"data": "2026-11-21",
+"paginas": [
+"https://www.aion2brasil.com.br/2025/12/a-historia.html",
+"https://www.aion2brasil.com.br/2025/12/arqueiro-pve-pvp-mista.html",
+"https://www.aion2brasil.com.br/2025/12/asmodians.html",
+"https://www.aion2brasil.com.br/2025/12/assassino-pve-pvp-mista.html",
+"https://www.aion2brasil.com.br/2025/12/blog-post.html",
+"https://www.aion2brasil.com.br/2025/12/dungeons-expedicao-e-conquista.html",
+"https://www.aion2brasil.com.br/2025/12/elementalist-pve-pvp.html",
+"https://www.aion2brasil.com.br/2025/12/elyos.html",
+"https://www.aion2brasil.com.br/2025/12/gladiador-pve.html",
+"https://www.aion2brasil.com.br/2025/12/guia-completo-arqueiro.html",
+"https://www.aion2brasil.com.br/2025/12/guia-do-assassino.html",
+"https://www.aion2brasil.com.br/2025/12/guia-do-elementalist.html",
+"https://www.aion2brasil.com.br/2025/12/guia-do-gladiador.html",
+"https://www.aion2brasil.com.br/2025/12/mapa-interativo.html",
+"https://www.aion2brasil.com.br/2026/01/chanter-pve-pvp-mista.html",
+"https://www.aion2brasil.com.br/2026/01/clerigo-pve-pvp-mista.html",
+"https://www.aion2brasil.com.br/2026/01/daevanion-arqueiro-nezekan-zikel-vaizel.html",
+"https://www.aion2brasil.com.br/2026/01/daevanion-assassino-nezekan-zikel.html",
+"https://www.aion2brasil.com.br/2026/01/daevanion-chanter-nezekan-zikel-vaizel.html",
+"https://www.aion2brasil.com.br/2026/01/daevanion-clerigo-nezekan-zikel-vaizel.html",
+"https://www.aion2brasil.com.br/2026/01/elemetalistdaevanion.html",
+"https://www.aion2brasil.com.br/2026/01/evento-meta-cabal.html",
+"https://www.aion2brasil.com.br/2026/01/guia-do-chanter.html",
+"https://www.aion2brasil.com.br/2026/01/guia-do-clerigo.html",
+"https://www.aion2brasil.com.br/2026/01/guia-do-feiticeiro.html",
+"https://www.aion2brasil.com.br/2026/01/interface-de-habilidade-skill.html",
+"https://www.aion2brasil.com.br/2026/01/sorcerer-feiticeiro-pve-pvp-hibrida.html",
+"https://www.aion2brasil.com.br/2026/01/status-habilidade-dicionario.html",
+"https://www.aion2brasil.com.br/2026/02/body-background-color-05070a-font.html",
+"https://www.aion2brasil.com.br/2026/02/cabal.html",
+"https://www.aion2brasil.com.br/2026/02/calculadora-bm.html",
+"https://www.aion2brasil.com.br/2026/02/daevanion-gladiador-nezekan-zikel.html",
+"https://www.aion2brasil.com.br/2026/02/daevanion-sorcerer-nezekan-zikel-vaizel.html",
+"https://www.aion2brasil.com.br/2026/02/extracao-guia-de-interface-de-usuario.html",
+"https://www.aion2brasil.com.br/2026/02/shugo-festival.html",
+"https://www.aion2brasil.com.br/2026/02/spacetime-rift-timer.html",
+"https://www.aion2brasil.com.br/2026/04/pve-daevanion.html",
+"https://www.aion2brasil.com.br/2026/04/pvp-daevanion-azphel.html",
+"https://www.aion2brasil.com.br/2026/05/guia-completao-sistema-de-asas-no-aion.html",
+"https://www.aion2brasil.com.br/2026/05/missoa-guerra-cabal-timer.html",
+"https://www.aion2brasil.com.br/2026/05/pet-aion2.html",
+"https://www.aion2brasil.com.br/2026/06/calc-recomendacaodebuild.html",
+"https://www.aion2brasil.com.br/2026/07/aion2-stat-calc-bg-dark-121212-bg-panel.html",
+"https://www.aion2brasil.com.br/2026/09/acompanhamento-meta-missao-de-guerra.html",
+"https://www.aion2brasil.com.br/2026/09/banco-de-dados-asa.html",
+"https://www.aion2brasil.com.br/2026/10/aion-2-guia-do-panteao-estatuas-obras.html",
+"https://www.aion2brasil.com.br/2026/10/aprimoramento-do-caos-anel.html",
+"https://www.aion2brasil.com.br/2026/10/arcanas-guia-completo.html",
+"https://www.aion2brasil.com.br/2026/10/boss-timer.html",
+"https://www.aion2brasil.com.br/2026/10/cabal-online-enigma-monolito.html",
+"https://www.aion2brasil.com.br/2026/10/cabal-online-impulso-absoluto.html",
+"https://www.aion2brasil.com.br/2026/10/cabal-online-medalha-elite.html",
+"https://www.aion2brasil.com.br/2026/10/cabal-online-radar-coreia-x-brasil.html",
+"https://www.aion2brasil.com.br/2026/10/conquistas.html",
+"https://www.aion2brasil.com.br/2026/10/daevanion-marchutan.html",
+"https://www.aion2brasil.com.br/2026/10/daevanion-templario.html",
+"https://www.aion2brasil.com.br/2026/10/dungeons-solo.html",
+"https://www.aion2brasil.com.br/2026/10/equipamentos.html",
+"https://www.aion2brasil.com.br/2026/10/groggy.html",
+"https://www.aion2brasil.com.br/2026/10/guia-build-arcanas.html",
+"https://www.aion2brasil.com.br/2026/10/guia-templario.html",
+"https://www.aion2brasil.com.br/2026/10/guiade-atributos.html",
+"https://www.aion2brasil.com.br/2026/10/linha-do-tempo.html",
+"https://www.aion2brasil.com.br/2026/10/macro.html",
+"https://www.aion2brasil.com.br/2026/10/missoes.html",
+"https://www.aion2brasil.com.br/2026/10/monolito.html",
+"https://www.aion2brasil.com.br/2026/10/noticias-e-mais.html",
+"https://www.aion2brasil.com.br/2026/10/o-inicio.html",
+"https://www.aion2brasil.com.br/2026/10/premium-e-valores.html",
+"https://www.aion2brasil.com.br/2026/10/profissoes.html",
+"https://www.aion2brasil.com.br/2026/10/quiz.html",
+"https://www.aion2brasil.com.br/2026/10/rotacao-todas-as-classes.html",
+"https://www.aion2brasil.com.br/2026/10/rotinas-diarias-e-semanais.html",
+"https://www.aion2brasil.com.br/2026/10/simulador-de-encantamento.html",
+"https://www.aion2brasil.com.br/2026/10/simulador-de-extracao.html",
+"https://www.aion2brasil.com.br/2026/10/skills-e-stigma.html",
+"https://www.aion2brasil.com.br/2026/10/templario-builds-skills.html",
+"https://www.aion2brasil.com.br/2026/10/temporada-1.html",
+"https://www.aion2brasil.com.br/2026/10/titulos.html",
+"https://www.aion2brasil.com.br/2026/11/aion2-censo-do-servidor-latam-elyos-x.html",
+"https://www.aion2brasil.com.br/2026/11/aion2-montarias-onde-farmar-cada-uma-e.html",
+"https://www.aion2brasil.com.br/2026/11/aion2-pedras-divinas-todas-as-51-e-qual.html",
+"https://www.aion2brasil.com.br/2026/11/biblioteca-de-atreia.html",
+"https://www.aion2brasil.com.br/2026/11/calculadora-de-criacao.html",
+"https://www.aion2brasil.com.br/2026/11/campanhas-em-capitulos.html",
+"https://www.aion2brasil.com.br/2026/11/daevanion-marchuthan.html",
+"https://www.aion2brasil.com.br/2026/11/mapa-de-rotas-de-coleta-aion-2-brasil.html",
+"https://www.aion2brasil.com.br/2026/11/o-que-vem-por-ai-no-aion-2-previsoes.html",
+"https://www.aion2brasil.com.br/2026/11/os-lords-empireos.html",
+"https://www.aion2brasil.com.br/2026/11/personagens-e-viloes.html",
+"https://www.aion2brasil.com.br/2026/11/planejador-yustiel.html",
+"https://www.aion2brasil.com.br/2026/11/ranking-de-cp-do-latam.html",
+"https://www.aion2brasil.com.br/p/notas-de-atualizacoes-aion-2-tw.html"
+],
+"termos": {
+"https://www.aion2brasil.com.br/2025/12/a-historia.html": {},
+"https://www.aion2brasil.com.br/2025/12/arqueiro-pve-pvp-mista.html": {
+"termo velho de atributo": 1
+},
+"https://www.aion2brasil.com.br/2025/12/asmodians.html": {},
+"https://www.aion2brasil.com.br/2025/12/assassino-pve-pvp-mista.html": {
+"HP/MP (usar PV/PM)": 31,
+"Stigma (usar Estigma)": 7,
+"termo velho de atributo": 24
+},
+"https://www.aion2brasil.com.br/2025/12/blog-post.html": {
+"termo velho de atributo": 1
+},
+"https://www.aion2brasil.com.br/2025/12/dungeons-expedicao-e-conquista.html": {
+"Odyle (usar Od)": 1,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2025/12/elementalist-pve-pvp.html": {
+"Elementalista (usar Espiritualista)": 1
+},
+"https://www.aion2brasil.com.br/2025/12/elyos.html": {},
+"https://www.aion2brasil.com.br/2025/12/gladiador-pve.html": {
+"Chanter/Cantor (usar Encantador)": 1,
+"HP/MP (usar PV/PM)": 35,
+"Stigma (usar Estigma)": 4,
+"termo velho de atributo": 20
+},
+"https://www.aion2brasil.com.br/2025/12/guia-completo-arqueiro.html": {
+"Chanter/Cantor (usar Encantador)": 3,
+"Sorcerer (usar Feiticeiro)": 1,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2025/12/guia-do-assassino.html": {
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2025/12/guia-do-elementalist.html": {
+"Elementalista (usar Espiritualista)": 1,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2025/12/guia-do-gladiador.html": {
+"Chanter/Cantor (usar Encantador)": 3,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2025/12/mapa-interativo.html": {},
+"https://www.aion2brasil.com.br/2026/01/chanter-pve-pvp-mista.html": {
+"Chanter/Cantor (usar Encantador)": 4,
+"HP/MP (usar PV/PM)": 43,
+"Stigma (usar Estigma)": 6,
+"termo velho de atributo": 20
+},
+"https://www.aion2brasil.com.br/2026/01/clerigo-pve-pvp-mista.html": {
+"Chanter/Cantor (usar Encantador)": 2
+},
+"https://www.aion2brasil.com.br/2026/01/daevanion-arqueiro-nezekan-zikel-vaizel.html": {},
+"https://www.aion2brasil.com.br/2026/01/daevanion-assassino-nezekan-zikel.html": {},
+"https://www.aion2brasil.com.br/2026/01/daevanion-chanter-nezekan-zikel-vaizel.html": {
+"Chanter/Cantor (usar Encantador)": 3
+},
+"https://www.aion2brasil.com.br/2026/01/daevanion-clerigo-nezekan-zikel-vaizel.html": {},
+"https://www.aion2brasil.com.br/2026/01/elemetalistdaevanion.html": {},
+"https://www.aion2brasil.com.br/2026/01/evento-meta-cabal.html": {},
+"https://www.aion2brasil.com.br/2026/01/guia-do-chanter.html": {
+"Chanter/Cantor (usar Encantador)": 28,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2026/01/guia-do-clerigo.html": {
+"Chanter/Cantor (usar Encantador)": 12,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2026/01/guia-do-feiticeiro.html": {
+"Sorcerer (usar Feiticeiro)": 2,
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2026/01/interface-de-habilidade-skill.html": {
+"Stigma (usar Estigma)": 1
+},
+"https://www.aion2brasil.com.br/2026/01/sorcerer-feiticeiro-pve-pvp-hibrida.html": {
+"HP/MP (usar PV/PM)": 52,
+"Sorcerer (usar Feiticeiro)": 1,
+"Stigma (usar Estigma)": 4,
+"termo velho de atributo": 15
+},
+"https://www.aion2brasil.com.br/2026/01/status-habilidade-dicionario.html": {},
+"https://www.aion2brasil.com.br/2026/02/body-background-color-05070a-font.html": {},
+"https://www.aion2brasil.com.br/2026/02/cabal.html": {
+"dado da Coreia/Taiwan": 1
+},
+"https://www.aion2brasil.com.br/2026/02/calculadora-bm.html": {
+"HP/MP (usar PV/PM)": 23,
+"Mago (usar Feiticeiro)": 4
+},
+"https://www.aion2brasil.com.br/2026/02/daevanion-gladiador-nezekan-zikel.html": {},
+"https://www.aion2brasil.com.br/2026/02/daevanion-sorcerer-nezekan-zikel-vaizel.html": {
+"Sorcerer (usar Feiticeiro)": 1
+},
+"https://www.aion2brasil.com.br/2026/02/extracao-guia-de-interface-de-usuario.html": {},
+"https://www.aion2brasil.com.br/2026/02/shugo-festival.html": {},
+"https://www.aion2brasil.com.br/2026/02/spacetime-rift-timer.html": {
+"dado da Coreia/Taiwan": 5
+},
+"https://www.aion2brasil.com.br/2026/04/pve-daevanion.html": {
+"Chanter/Cantor (usar Encantador)": 1,
+"Elementalista (usar Espiritualista)": 1,
+"Sorcerer (usar Feiticeiro)": 1
+},
+"https://www.aion2brasil.com.br/2026/04/pvp-daevanion-azphel.html": {
+"Chanter/Cantor (usar Encantador)": 1,
+"Elementalista (usar Espiritualista)": 1,
+"Sorcerer (usar Feiticeiro)": 1
+},
+"https://www.aion2brasil.com.br/2026/05/guia-completao-sistema-de-asas-no-aion.html": {
+"Odyle (usar Od)": 1,
+"dado da Coreia/Taiwan": 19
+},
+"https://www.aion2brasil.com.br/2026/05/missoa-guerra-cabal-timer.html": {},
+"https://www.aion2brasil.com.br/2026/05/pet-aion2.html": {
+"Odyle (usar Od)": 4
+},
+"https://www.aion2brasil.com.br/2026/06/calc-recomendacaodebuild.html": {
+"HP/MP (usar PV/PM)": 12,
+"termo velho de atributo": 4
+},
+"https://www.aion2brasil.com.br/2026/07/aion2-stat-calc-bg-dark-121212-bg-panel.html": {
+"HP/MP (usar PV/PM)": 3,
+"termo velho de atributo": 2
+},
+"https://www.aion2brasil.com.br/2026/09/acompanhamento-meta-missao-de-guerra.html": {},
+"https://www.aion2brasil.com.br/2026/09/banco-de-dados-asa.html": {
+"HP/MP (usar PV/PM)": 64,
+"Odyle (usar Od)": 3,
+"termo velho de atributo": 6
+},
+"https://www.aion2brasil.com.br/2026/10/aion-2-guia-do-panteao-estatuas-obras.html": {},
+"https://www.aion2brasil.com.br/2026/10/aprimoramento-do-caos-anel.html": {
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2026/10/arcanas-guia-completo.html": {
+"Mago (usar Feiticeiro)": 1,
+"dado da Coreia/Taiwan": 8
+},
+"https://www.aion2brasil.com.br/2026/10/boss-timer.html": {},
+"https://www.aion2brasil.com.br/2026/10/cabal-online-enigma-monolito.html": {
+"dado da Coreia/Taiwan": 1
+},
+"https://www.aion2brasil.com.br/2026/10/cabal-online-impulso-absoluto.html": {
+"HP/MP (usar PV/PM)": 4,
+"dado da Coreia/Taiwan": 1
+},
+"https://www.aion2brasil.com.br/2026/10/cabal-online-medalha-elite.html": {
+"dado da Coreia/Taiwan": 1
+},
+"https://www.aion2brasil.com.br/2026/10/cabal-online-radar-coreia-x-brasil.html": {
+"dado da Coreia/Taiwan": 12
+},
+"https://www.aion2brasil.com.br/2026/10/conquistas.html": {
+"Festa Shugo (usar Shugo Festa)": 1,
+"Odyle (usar Od)": 2
+},
+"https://www.aion2brasil.com.br/2026/10/daevanion-marchutan.html": {
+"dado da Coreia/Taiwan": 18
+},
+"https://www.aion2brasil.com.br/2026/10/daevanion-templario.html": {},
+"https://www.aion2brasil.com.br/2026/10/dungeons-solo.html": {},
+"https://www.aion2brasil.com.br/2026/10/equipamentos.html": {
+"dado da Coreia/Taiwan": 2
+},
+"https://www.aion2brasil.com.br/2026/10/groggy.html": {},
+"https://www.aion2brasil.com.br/2026/10/guia-build-arcanas.html": {
+"HP/MP (usar PV/PM)": 5,
+"termo velho de atributo": 6
+},
+"https://www.aion2brasil.com.br/2026/10/guia-templario.html": {
+"dado da Coreia/Taiwan": 2,
+"termo velho de atributo": 1
+},
+"https://www.aion2brasil.com.br/2026/10/guiade-atributos.html": {},
+"https://www.aion2brasil.com.br/2026/10/linha-do-tempo.html": {},
+"https://www.aion2brasil.com.br/2026/10/macro.html": {
+"termo velho de atributo": 1
+},
+"https://www.aion2brasil.com.br/2026/10/missoes.html": {
+"Odyle (usar Od)": 2
+},
+"https://www.aion2brasil.com.br/2026/10/monolito.html": {},
+"https://www.aion2brasil.com.br/2026/10/noticias-e-mais.html": {
+"Odyle (usar Od)": 1
+},
+"https://www.aion2brasil.com.br/2026/10/o-inicio.html": {
+"dado da Coreia/Taiwan": 4
+},
+"https://www.aion2brasil.com.br/2026/10/premium-e-valores.html": {},
+"https://www.aion2brasil.com.br/2026/10/profissoes.html": {},
+"https://www.aion2brasil.com.br/2026/10/quiz.html": {
+"Mago (usar Feiticeiro)": 1
+},
+"https://www.aion2brasil.com.br/2026/10/rotacao-todas-as-classes.html": {
+"Elementalista (usar Espiritualista)": 1,
+"termo velho de atributo": 1
+},
+"https://www.aion2brasil.com.br/2026/10/rotinas-diarias-e-semanais.html": {},
+"https://www.aion2brasil.com.br/2026/10/simulador-de-encantamento.html": {},
+"https://www.aion2brasil.com.br/2026/10/simulador-de-extracao.html": {},
+"https://www.aion2brasil.com.br/2026/10/skills-e-stigma.html": {
+"dado da Coreia/Taiwan": 8
+},
+"https://www.aion2brasil.com.br/2026/10/templario-builds-skills.html": {
+"HP/MP (usar PV/PM)": 44,
+"Stigma (usar Estigma)": 7,
+"termo velho de atributo": 15
+},
+"https://www.aion2brasil.com.br/2026/10/temporada-1.html": {
+"Odyle (usar Od)": 1
+},
+"https://www.aion2brasil.com.br/2026/10/titulos.html": {},
+"https://www.aion2brasil.com.br/2026/11/aion2-censo-do-servidor-latam-elyos-x.html": {
+"Chanter/Cantor (usar Encantador)": 13,
+"Sorcerer (usar Feiticeiro)": 2
+},
+"https://www.aion2brasil.com.br/2026/11/aion2-montarias-onde-farmar-cada-uma-e.html": {
+"Mago (usar Feiticeiro)": 4,
+"Odyle (usar Od)": 19
+},
+"https://www.aion2brasil.com.br/2026/11/aion2-pedras-divinas-todas-as-51-e-qual.html": {},
+"https://www.aion2brasil.com.br/2026/11/biblioteca-de-atreia.html": {
+"dado da Coreia/Taiwan": 4
+},
+"https://www.aion2brasil.com.br/2026/11/calculadora-de-criacao.html": {},
+"https://www.aion2brasil.com.br/2026/11/campanhas-em-capitulos.html": {},
+"https://www.aion2brasil.com.br/2026/11/daevanion-marchuthan.html": {
+"dado da Coreia/Taiwan": 5
+},
+"https://www.aion2brasil.com.br/2026/11/mapa-de-rotas-de-coleta-aion-2-brasil.html": {
+"Odyle (usar Od)": 2
+},
+"https://www.aion2brasil.com.br/2026/11/o-que-vem-por-ai-no-aion-2-previsoes.html": {
+"dado da Coreia/Taiwan": 11
+},
+"https://www.aion2brasil.com.br/2026/11/os-lords-empireos.html": {
+"dado da Coreia/Taiwan": 4
+},
+"https://www.aion2brasil.com.br/2026/11/personagens-e-viloes.html": {},
+"https://www.aion2brasil.com.br/2026/11/planejador-yustiel.html": {
+"dado da Coreia/Taiwan": 5
+},
+"https://www.aion2brasil.com.br/2026/11/ranking-de-cp-do-latam.html": {},
+"https://www.aion2brasil.com.br/p/notas-de-atualizacoes-aion-2-tw.html": {
+"dado da Coreia/Taiwan": 6
+}
+}
+}

@@ -1,9 +1,9 @@
 # Relatório de manutenção · 21/11/2026
 
-93 páginas lidas, 0 links e imagens conferidos.
+93 páginas lidas, 485 links e imagens conferidos.
 
-## Links e imagens quebrados (0)
-Nenhum.
+## Links e imagens quebrados (1)
+- https://aion2hub.com/news/aion-2-global-monetization-dev-video (404) · em: /2026/10/premium-e-valores.html
 
 ## Nomes antigos que apareceram desde a última vez (0)
 Primeira leitura: os nomes que já estavam no blog viraram a base. A partir da próxima, só aparece aqui o que for novo.
@@ -11,37 +11,30 @@ Primeira leitura: os nomes que já estavam no blog viraram a base. A partir da p
 ## "Próxima atualização" com data vencida (0)
 Nenhuma.
 
-## Páginas que não abriram (28)
-- /2025/12/arqueiro-pve-pvp-mista.html (429)
-- /2025/12/assassino-pve-pvp-mista.html (429)
-- /2025/12/blog-post.html (429)
-- /2025/12/guia-do-elementalist.html (429)
-- /2025/12/mapa-interativo.html (429)
-- /2026/01/chanter-pve-pvp-mista.html (429)
-- /2026/01/guia-do-chanter.html (429)
-- /2026/01/guia-do-clerigo.html (429)
-- /2026/01/guia-do-feiticeiro.html (429)
-- /2026/01/status-habilidade-dicionario.html (429)
-- /2026/02/body-background-color-05070a-font.html (429)
-- /2026/02/extracao-guia-de-interface-de-usuario.html (429)
-- /2026/04/pvp-daevanion-azphel.html (429)
-- /2026/05/guia-completao-sistema-de-asas-no-aion.html (429)
-- /2026/05/missoa-guerra-cabal-timer.html (429)
-- /2026/10/aion-2-guia-do-panteao-estatuas-obras.html (429)
-- /2026/10/arcanas-guia-completo.html (429)
-- /2026/10/cabal-online-enigma-monolito.html (429)
-- /2026/10/daevanion-marchutan.html (429)
-- /2026/10/missoes.html (429)
-- /2026/10/rotinas-diarias-e-semanais.html (429)
-- /2026/10/simulador-de-extracao.html (429)
-- /2026/10/skills-e-stigma.html (429)
-- /2026/11/campanhas-em-capitulos.html (429)
-- /2026/11/mapa-de-rotas-de-coleta-aion-2-brasil.html (429)
-- /2026/11/planejador-yustiel.html (429)
-- /2026/11/ranking-de-cp-do-latam.html (429)
-- /p/notas-de-atualizacoes-aion-2-tw.html (429)
+## Páginas que não abriram (0)
+Nenhuma.
 
-<details><summary>Sites de fora que recusaram o robô (0), conferir na mão se quiser</summary>
+<details><summary>Sites de fora que recusaram o robô (20), conferir na mão se quiser</summary>
 
+- https://i.postimg.cc/3RCWPcbg/06-transcendencia-recompensas.jpg (erro: TimeoutError)
+- https://i.postimg.cc/3rLjbScz/asmodian_faction_aion_2_wiki_guide.webp (erro: TimeoutError)
+- https://i.postimg.cc/4yMFnSJV/PET.png (erro: TimeoutError)
+- https://i.postimg.cc/50qjZRk0/04-arcana-sintese.jpg (erro: TimeoutError)
+- https://i.postimg.cc/HWqzFQtx/Arcana.png (erro: TimeoutError)
+- https://i.postimg.cc/MGJXVTB7/new-aion-2-images-from-gamescom-v0-270q6wexjekf1.jpg (erro: TimeoutError)
+- https://i.postimg.cc/RFBTfSBS/1.png (erro: TimeoutError)
+- https://i.postimg.cc/V6qSp4Ld/stigma_gladiador.png (erro: TimeoutError)
+- https://i.postimg.cc/Y93fp27s/Cópia_de_stigma_sorcerer_(1).png (erro: UnicodeEncodeError)
+- https://i.postimg.cc/ZRHPmVKM/1403215.jpg (erro: TimeoutError)
+- https://i.postimg.cc/gcXX5jLM/Sorcerer_pa_04.png (erro: TimeoutError)
+- https://i.postimg.cc/hPWq1xKM/1.png (erro: TimeoutError)
+- https://i.postimg.cc/hPWq1xKZ/3.png (erro: TimeoutError)
+- https://i.postimg.cc/xCRy0jYr/2.png (erro: TimeoutError)
+- https://i.postimg.cc/xTDS3H95/2.png (erro: TimeoutError)
+- https://i.postimg.cc/y6MgzK0Q/Sorcerer_pa_07.png (erro: TimeoutError)
+- https://metabot.gg/web/aion2/creatures/ (403)
+- https://metabot.gg/web/aion2/items/ (403)
+- https://thegameswiki.com/aion-2/wiki/abyssal-forge-ludra (429)
+- https://thegameswiki.com/aion-2/wiki/monetization-and-memberships (429)
 
 </details>
