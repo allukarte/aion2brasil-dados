@@ -1,0 +1,43 @@
+name: robo
+on:
+  schedule:
+    - cron: '17 9 * * *'   # todo dia, 06:17 em Brasília
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'medir ou diario'
+        default: 'diario'
+      minutos:
+        description: 'tempo máximo de consulta'
+        default: '300'
+permissions:
+  contents: write
+concurrency: robo
+jobs:
+  robo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+          cache: false
+      - name: Rodar
+        working-directory: robo
+        env:
+          MINUTOS: ${{ github.event.inputs.minutos || '300' }}
+        run: |
+          go get github.com/nuriland/aion2-api@latest
+          go mod tidy
+          go build -o ../robo-bin .
+          cd .. && ./robo-bin ${{ github.event.inputs.modo || 'diario' }}
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "robo-aion2brasil"
+          git config user.email "robo-aion2brasil@users.noreply.github.com"
+          git add -A dados site robo/go.mod robo/go.sum
+          git commit -m "Robô: dados de $(date -u +%F)" || exit 0
+          git pull --rebase -X ours origin main || true
+          git push
