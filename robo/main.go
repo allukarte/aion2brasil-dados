@@ -3,9 +3,11 @@
 package main
 
 import (
+	"compress/gzip"
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"sort"
@@ -20,10 +22,10 @@ const pausa = 400 * time.Millisecond // educado com o site oficial (~2 pedidos p
 var letras = strings.Split("abcdefghijklmnopqrstuvwxyz0123456789", "")
 
 type Pers struct {
-	N  string `json:"n"`  // nome
-	C  int    `json:"c"`  // classe
-	L  int    `json:"l"`  // nível
-	R  int    `json:"r"`  // raça
+	N  string `json:"n"` // nome
+	C  int    `json:"c"` // classe
+	L  int    `json:"l"` // nível
+	R  int    `json:"r"` // raça
 	CP int    `json:"cp,omitempty"`
 	T  string `json:"t,omitempty"` // título
 	G  string `json:"g,omitempty"` // legião
@@ -48,7 +50,20 @@ var (
 )
 
 func ler(f string, v any) bool {
-	b, err := os.ReadFile(f)
+	fh, err := os.Open(f)
+	if err != nil {
+		return false
+	}
+	defer fh.Close()
+	var r io.Reader = fh
+	if strings.HasSuffix(f, ".gz") {
+		z, err := gzip.NewReader(fh)
+		if err != nil {
+			return false
+		}
+		r = z
+	}
+	b, err := io.ReadAll(r)
 	if err != nil {
 		return false
 	}
@@ -62,6 +77,17 @@ func gravar(f string, v any, bonito bool) {
 	} else {
 		b, _ = json.Marshal(v)
 	}
+	if strings.HasSuffix(f, ".gz") {
+		fh, err := os.Create(f)
+		if err != nil {
+			return
+		}
+		z := gzip.NewWriter(fh)
+		z.Write(b)
+		z.Close()
+		fh.Close()
+		return
+	}
 	os.WriteFile(f, b, 0644)
 }
 func tempo() bool { return time.Now().Before(limite) }
@@ -71,9 +97,15 @@ func main() {
 	if len(os.Args) > 1 {
 		modo = os.Args[1]
 	}
-	min := 300
+	min, vm, cm := 300, 45, 60
 	if v := os.Getenv("MINUTOS"); v != "" {
 		fmt.Sscan(v, &min)
+	}
+	if v := os.Getenv("VARRER_MIN"); v != "" {
+		fmt.Sscan(v, &vm)
+	}
+	if v := os.Getenv("CP_MIN"); v != "" {
+		fmt.Sscan(v, &cm)
 	}
 	limite = time.Now().Add(time.Duration(min) * time.Minute)
 	var cancel context.CancelFunc
@@ -94,11 +126,20 @@ func main() {
 		medir(sv)
 		return
 	}
+	fim := limite
+	limite = time.Now().Add(time.Duration(vm) * time.Minute)
+	if limite.After(fim) {
+		limite = fim
+	}
 	for _, s := range sv {
 		varrer(s)
 		if !tempo() {
 			break
 		}
+	}
+	limite = time.Now().Add(time.Duration(cm) * time.Minute)
+	if limite.After(fim) {
+		limite = fim
 	}
 	cps(sv)
 	saida(sv)
@@ -123,7 +164,7 @@ func medir(sv []aion2.Server) {
 	fmt.Println(out)
 }
 
-func arq(s aion2.Server) string { return fmt.Sprintf("dados/servidores/%d.json", s.ServerID) }
+func arq(s aion2.Server) string { return fmt.Sprintf("estado/%d.json.gz", s.ServerID) }
 
 // varrer: busca por letra e classe (a busca acha a letra em qualquer parte do nome), até 200 por página
 func varrer(s aion2.Server) {
