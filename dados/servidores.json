@@ -1,0 +1,131 @@
+{
+ "atualizado": "2026-11-21",
+ "classes": [
+  {
+   "id": 2,
+   "name": "Gladiator",
+   "text": "Gladiador"
+  },
+  {
+   "id": 3,
+   "name": "Templar",
+   "text": "Templário"
+  },
+  {
+   "id": 5,
+   "name": "Assassin",
+   "text": "Assassino"
+  },
+  {
+   "id": 4,
+   "name": "Ranger",
+   "text": "Arqueiro"
+  },
+  {
+   "id": 7,
+   "name": "Sorcerer",
+   "text": "Mago"
+  },
+  {
+   "id": 6,
+   "name": "Elementalist",
+   "text": "Espiritualista"
+  },
+  {
+   "id": 8,
+   "name": "Cleric",
+   "text": "Clérigo"
+  },
+  {
+   "id": 9,
+   "name": "Chanter",
+   "text": "Encantador"
+  }
+ ],
+ "servidores": [
+  {
+   "region": "sa",
+   "serverId": 1401,
+   "raceId": 1,
+   "serverName": "Siel",
+   "serverShortName": "Sie"
+  },
+  {
+   "region": "sa",
+   "serverId": 1402,
+   "raceId": 1,
+   "serverName": "Nezekan",
+   "serverShortName": "Nez"
+  },
+  {
+   "region": "sa",
+   "serverId": 1403,
+   "raceId": 1,
+   "serverName": "Vaizel",
+   "serverShortName": "Vai"
+  },
+  {
+   "region": "sa",
+   "serverId": 1404,
+   "raceId": 1,
+   "serverName": "Kaisinel",
+   "serverShortName": "Kai"
+  },
+  {
+   "region": "sa",
+   "serverId": 1405,
+   "raceId": 1,
+   "serverName": "Yustiel",
+   "serverShortName": "Yus"
+  },
+  {
+   "region": "sa",
+   "serverId": 1406,
+   "raceId": 1,
+   "serverName": "Ariel",
+   "serverShortName": "Ari"
+  },
+  {
+   "region": "sa",
+   "serverId": 2401,
+   "raceId": 2,
+   "serverName": "Israphel",
+   "serverShortName": "Isr"
+  },
+  {
+   "region": "sa",
+   "serverId": 2402,
+   "raceId": 2,
+   "serverName": "Zikel",
+   "serverShortName": "Zik"
+  },
+  {
+   "region": "sa",
+   "serverId": 2403,
+   "raceId": 2,
+   "serverName": "Triniel",
+   "serverShortName": "Tri"
+  },
+  {
+   "region": "sa",
+   "serverId": 2404,
+   "raceId": 2,
+   "serverName": "Lumiel",
+   "serverShortName": "Lum"
+  },
+  {
+   "region": "sa",
+   "serverId": 2405,
+   "raceId": 2,
+   "serverName": "Marchutan",
+   "serverShortName": "Mar"
+  },
+  {
+   "region": "sa",
+   "serverId": 2406,
+   "raceId": 2,
+   "serverName": "Azphel",
+   "serverShortName": "Azp"
+  }
+ ]
+}
