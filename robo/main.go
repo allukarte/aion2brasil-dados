@@ -386,6 +386,9 @@ func patch() {
 				fmt.Println("erro", q.nome, err)
 				break
 			}
+			if strings.Contains(p.Title, "Restrições de Conta") || strings.Contains(p.Title, "Account Restrictions") {
+				continue // lista de banimentos: não vira aviso
+			}
 			r := []rune(strings.TrimSpace(p.Summary))
 			if len(r) > 280 {
 				r = append(r[:277], []rune("...")...)
