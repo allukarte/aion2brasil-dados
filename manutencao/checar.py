@@ -13,6 +13,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -38,6 +39,15 @@ TERMOS = [(n, re.compile(p)) for n, p in TERMOS]
 
 
 def baixar(url, metodo="GET", tempo=25):
+    for tentativa in range(4):
+        st, b = _baixar(url, metodo, tempo)
+        if st != 429:
+            return st, b
+        time.sleep(20 * (tentativa + 1))  # o Blogger pediu calma
+    return st, b
+
+
+def _baixar(url, metodo="GET", tempo=25):
     req = urllib.request.Request(url, method=metodo, headers={"User-Agent": UA, "Accept-Language": "pt-BR"})
     try:
         with urllib.request.urlopen(req, timeout=tempo) as r:
@@ -65,10 +75,10 @@ def paginas():
 
 def corpo(h):
     """Só o texto do post (sem a barra lateral), com os \\uXXXX dos scripts já traduzidos."""
-    i = h.find("post-body")
-    if i >= 0:
-        j = h.find("post-footer", i)
-        h = h[i: j if j > 0 else len(h)]
+    m = re.search(r"""class=["'][^"']*\bpost-body\b""", h)
+    if m:
+        f = re.search(r"""class=["'][^"']*\bpost-footer\b""", h[m.end():])
+        h = h[m.start(): m.end() + f.start() if f else len(h)]
     h = re.sub(r"\\u([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), h)
     return h
 
@@ -97,11 +107,13 @@ def main():
     datas = []
     falhas = []
 
-    def ler(u):
-        return u, baixar(u)
+    def lidas():
+        for u in urls:  # uma por vez: o Blogger devolve 429 se for rápido demais
+            yield u, baixar(u)
+            time.sleep(1.5)
 
-    with cf.ThreadPoolExecutor(6) as ex:
-        for u, (st, b) in ex.map(ler, urls):
+    if True:
+        for u, (st, b) in lidas():
             if st != 200:
                 falhas.append((u, st))
                 continue
@@ -123,15 +135,25 @@ def main():
 
     print("links", len(links))
 
+    conhecidas = {u.split("?")[0].rstrip("/") for u in urls} | {SITE}
+
     def checar(l):
+        if l.split("?")[0].rstrip("/") in conhecidas:
+            return l, 200
+        if l.startswith(SITE):
+            time.sleep(1.5)
         st, _ = baixar(l, "HEAD", 20)
         if st in (403, 405, 400, 501) or isinstance(st, str):
             st, _ = baixar(l, "GET", 25)
         return l, st
 
     quebrados, bloqueados = [], []
-    with cf.ThreadPoolExecutor(8) as ex:
-        for l, st in ex.map(checar, sorted(links)):
+    internos = [l for l in sorted(links) if l.startswith(SITE)]
+    externos = [l for l in sorted(links) if not l.startswith(SITE)]
+    with cf.ThreadPoolExecutor(6) as ex:
+        res = [checar(l) for l in internos] + list(ex.map(checar, externos))
+    if True:
+        for l, st in res:
             if st in (404, 410) or (isinstance(st, str) and "URLError" in st):
                 quebrados.append((l, st))
             elif isinstance(st, str) or st >= 400:
@@ -139,7 +161,10 @@ def main():
 
     # termos: só avisa o que aumentou desde a última vez
     novos = []
+    vistas = set(base.get("paginas", []))
     for u, c in termos.items():
+        if u in vistas and u not in base.get("termos", {}):
+            continue  # da última vez a página não abriu: vira base agora
         antes = base.get("termos", {}).get(u, {})
         for k, v in c.items():
             if v > antes.get(k, 0):
@@ -164,7 +189,9 @@ def main():
     L += ["", "</details>", ""]
     rel = "\n".join(L)
     open(os.path.join(AQUI, "relatorio.md"), "w", encoding="utf-8").write(rel)
-    base_nova = {"data": HOJE.isoformat(), "termos": termos}
+    t_novo = dict(base.get("termos", {}))
+    t_novo.update(termos)
+    base_nova = {"data": HOJE.isoformat(), "paginas": sorted(vistas | set(urls)), "termos": t_novo}
     json.dump(base_nova, open(os.path.join(AQUI, "base.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0, sort_keys=True)
     problemas = len(quebrados) + (0 if primeira else len(novos)) + len(datas) + len(falhas)
     open(os.path.join(AQUI, "..", "manutencao-resumo.txt"), "w").write(str(problemas))
