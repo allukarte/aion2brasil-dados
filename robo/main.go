@@ -12,12 +12,13 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
+	"sync"
 	"time"
 
 	aion2 "github.com/nuriland/aion2-api"
 )
 
-const pausa = 400 * time.Millisecond // educado com o site oficial (~2 pedidos por segundo)
+const pausa = 0 // o limitador da biblioteca já espaça: no máximo 2,5 pedidos por segundo
 
 var letras = strings.Split("abcdefghijklmnopqrstuvwxyz0123456789", "")
 
@@ -97,7 +98,7 @@ func main() {
 	if len(os.Args) > 1 {
 		modo = os.Args[1]
 	}
-	min, vm, cm := 300, 45, 60
+	min, vm, cm := 300, 90, 0
 	if v := os.Getenv("MINUTOS"); v != "" {
 		fmt.Sscan(v, &min)
 	}
@@ -112,7 +113,7 @@ func main() {
 	ctx, cancel = context.WithTimeout(context.Background(), time.Duration(min+20)*time.Minute)
 	defer cancel()
 	var err error
-	c, err = aion2.New(aion2.ConfigOpts{Region: aion2.RegionSA, Locale: aion2.LocalePTBR})
+	c, err = aion2.New(aion2.ConfigOpts{Region: aion2.RegionSA, Locale: aion2.LocalePTBR, RateLimit: 2.5})
 	if err != nil {
 		panic(err)
 	}
@@ -138,7 +139,7 @@ func main() {
 		}
 	}
 	limite = time.Now().Add(time.Duration(cm) * time.Minute)
-	if limite.After(fim) {
+	if cm == 0 || limite.After(fim) {
 		limite = fim
 	}
 	cps(sv)
@@ -242,27 +243,41 @@ func cps(sv []aion2.Server) {
 	}
 	sort.Slice(fila, func(i, j int) bool { return fila[i].q < fila[j].q })
 	n := 0
+	var mu sync.Mutex
+	jobs := make(chan alvo)
+	var wg sync.WaitGroup
+	for w := 0; w < 3; w++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for a := range jobs {
+				ch, err := c.Character(ctx, aion2.CharacterRef{ServerID: a.s, CharacterID: a.id})
+				mu.Lock()
+				p := all[a.s].P[a.id]
+				p.Q = hoje
+				if err == nil {
+					p.CP, p.T, p.G, p.L, p.N = ch.Profile.CombatPower, ch.Profile.TitleName, ch.Profile.GuildName, ch.Profile.Level, ch.Profile.Name
+					n++
+					if n%2000 == 0 {
+						for _, s := range sv {
+							if S := all[s.ServerID]; S != nil {
+								gravar(arq(s), S, false)
+							}
+						}
+					}
+				}
+				mu.Unlock()
+			}
+		}()
+	}
 	for _, a := range fila {
 		if !tempo() {
 			break
 		}
-		ch, err := c.Character(ctx, aion2.CharacterRef{ServerID: a.s, CharacterID: a.id})
-		time.Sleep(pausa)
-		p := all[a.s].P[a.id]
-		p.Q = hoje
-		if err != nil {
-			continue
-		}
-		p.CP, p.T, p.G, p.L, p.N = ch.Profile.CombatPower, ch.Profile.TitleName, ch.Profile.GuildName, ch.Profile.Level, ch.Profile.Name
-		n++
-		if n%500 == 0 {
-			for _, s := range sv {
-				if S := all[s.ServerID]; S != nil {
-					gravar(arq(s), S, false)
-				}
-			}
-		}
+		jobs <- a
 	}
+	close(jobs)
+	wg.Wait()
 	for _, s := range sv {
 		if S := all[s.ServerID]; S != nil {
 			gravar(arq(s), S, false)

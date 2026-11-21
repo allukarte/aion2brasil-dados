@@ -9,7 +9,10 @@ on:
         default: 'diario'
       minutos:
         description: 'tempo máximo de consulta'
-        default: '300'
+        default: '320'
+      varrer:
+        description: 'minutos para a varredura de nomes'
+        default: '90'
 permissions:
   contents: write
 concurrency: robo
@@ -26,7 +29,8 @@ jobs:
       - name: Rodar
         working-directory: robo
         env:
-          MINUTOS: ${{ github.event.inputs.minutos || '300' }}
+          MINUTOS: ${{ github.event.inputs.minutos || '320' }}
+          VARRER_MIN: ${{ github.event.inputs.varrer || '90' }}
         run: |
           go get github.com/nuriland/aion2-api@latest
           go mod tidy
