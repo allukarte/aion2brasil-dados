@@ -1,0 +1,21 @@
+name: verificar
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 'servidor:id separados por espaço'
+        required: true
+jobs:
+  ver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consultar ficha oficial
+        env:
+          IDS: ${{ github.event.inputs.ids }}
+        run: |
+          for x in $IDS; do
+            sv=${x%%:*}; id=${x#*:}
+            curl -s -G "https://aion2.plaync.com/api/character/info" --data-urlencode lang=pt-BR --data-urlencode region=la --data-urlencode serverId=$sv --data-urlencode characterId=$id \
+              | jq -c '{n:.profile.characterName,c:.profile.className,l:.profile.characterLevel,cp:.profile.combatPower,il:([.stat.statList[]|select(.type=="ItemLevel")|.value][0])}'
+            sleep 1
+          done
