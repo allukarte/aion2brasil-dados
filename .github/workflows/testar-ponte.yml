@@ -1,0 +1,23 @@
+name: testar-ponte
+# Testa a rota /daevanion da ponte para um personagem de cada classe (servidor:classe:id separados por espaço)
+on:
+  workflow_dispatch:
+    inputs:
+      alvos:
+        required: true
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testar
+        env:
+          ALVOS: ${{ github.event.inputs.alvos }}
+        run: |
+          URL=$(cat ponte/amostras/endereco.txt)
+          for x in $ALVOS; do
+            IFS=: read -r sv cl id <<<"$x"
+            curl -s -G "$URL/daevanion" --data-urlencode "servidor=$sv" --data-urlencode "id=$id" --data-urlencode "classe=$cl" > r.json
+            python3 ponte/testar.py "$cl"
+            sleep 1
+          done
