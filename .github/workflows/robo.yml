@@ -1,7 +1,12 @@
 name: robo
 on:
   schedule:
-    - cron: '17 9 * * *'   # todo dia, 06:17 em Brasília
+    # o GitHub às vezes pula horários agendados; por isso há várias tentativas por dia
+    # e o robô só roda uma vez por dia (veja o passo "Já rodou hoje?")
+    - cron: '17 9 * * *'    # 06:17 em Brasília
+    - cron: '43 11 * * *'   # 08:43
+    - cron: '29 14 * * *'   # 11:29
+    - cron: '53 17 * * *'   # 14:53
   workflow_dispatch:
     inputs:
       modo:
@@ -22,11 +27,19 @@ jobs:
     timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
+      - name: Já rodou hoje?
+        id: hoje
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(cat estado/ultimo-diario.txt 2>/dev/null)" = "$(date -u +%F)" ]; then
+            echo "pular=1" >> "$GITHUB_OUTPUT"; echo "já rodou hoje"
+          fi
       - uses: actions/setup-go@v5
+        if: steps.hoje.outputs.pular != '1'
         with:
           go-version: '1.26'
           cache: false
       - name: Rodar
+        if: steps.hoje.outputs.pular != '1'
         working-directory: robo
         env:
           MINUTOS: ${{ github.event.inputs.minutos || '320' }}
@@ -36,6 +49,7 @@ jobs:
           go mod tidy
           go build -o ../robo-bin .
           cd .. && ./robo-bin ${{ github.event.inputs.modo || 'diario' }}
+          if [ "${{ github.event.inputs.modo || 'diario' }}" = "diario" ] && [ "$MINUTOS" -ge 120 ]; then date -u +%F > estado/ultimo-diario.txt; fi
       - name: Guardar
         if: always()
         run: |
