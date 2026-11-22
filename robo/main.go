@@ -329,7 +329,7 @@ func cps(sv []aion2.Server) {
 
 // saida: arquivos pequenos que o blog lê
 func saida(sv []aion2.Server) {
-	type linha = []any // [nome, classe, cp, titulo, legiao, servidorId]
+	type linha = []any // [nome, classe, cp, titulo, legiao, servidorId, characterId]
 	idx := map[string]any{"atualizado": time.Now().UTC().Format(time.RFC3339)}
 	cen := map[string]any{}
 	geral := []linha{}
@@ -344,7 +344,9 @@ func saida(sv []aion2.Server) {
 		cpc := map[int][]int{}
 		com := 0
 		rp := repetidos(&S)
-		for _, p := range S.P {
+		idDe := map[*Pers]string{}
+		for id, p := range S.P {
+			idDe[p] = id
 			cl[p.C]++
 			switch {
 			case p.L >= 45:
@@ -367,11 +369,11 @@ func saida(sv []aion2.Server) {
 		porc := map[int]int{}
 		for i, p := range L {
 			if len(top) < 100 || porc[p.C] < 50 {
-				top = append(top, linha{p.N, p.C, p.CP, p.T, p.G})
+				top = append(top, linha{p.N, p.C, p.CP, p.T, p.G, s.ServerID, idDe[p]})
 				porc[p.C]++
 			}
 			if i < 300 {
-				geral = append(geral, linha{p.N, p.C, p.CP, p.T, p.G, s.ServerID})
+				geral = append(geral, linha{p.N, p.C, p.CP, p.T, p.G, s.ServerID, idDe[p]})
 			}
 		}
 		med := map[int][]int{}
