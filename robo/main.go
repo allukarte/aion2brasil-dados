@@ -333,6 +333,8 @@ func saida(sv []aion2.Server) {
 	idx := map[string]any{"atualizado": time.Now().UTC().Format(time.RFC3339)}
 	cen := map[string]any{}
 	geral := []linha{}
+	var amostra [][3]int // [Item Level, CP, classe]
+	n45 := 0
 	for _, s := range sv {
 		var S Servidor
 		if !ler(arq(s), &S) {
@@ -362,6 +364,9 @@ func saida(sv []aion2.Server) {
 				L = append(L, p)
 				cpc[p.C] = append(cpc[p.C], p.CP)
 				com++
+				if p.I > 0 {
+					amostra = append(amostra, [3]int{p.I, p.CP, p.C})
+				}
 			}
 		}
 		sort.Slice(L, func(i, j int) bool { return L[i].CP > L[j].CP })
@@ -390,6 +395,14 @@ func saida(sv []aion2.Server) {
 		geral = geral[:300]
 	}
 	gravar("site/ranking/geral.json", geral, false)
+	for _, x := range cen {
+		if m, ok := x.(map[string]any); ok {
+			if nv, ok := m["niveis"].(map[string]int); ok {
+				n45 += nv["45"]
+			}
+		}
+	}
+	cpPorGS(amostra, n45)
 	censoCompleto(sv)
 	gravar("site/censo.json", cen, false)
 	gravar("site/indice.json", idx, true)
@@ -597,5 +610,81 @@ func censoCompleto(sv []aion2.Server) {
 		"legs":       legOut, // [servidor, legião, membros nível 45, soma do CP]
 		"titles":     titOut, // [título, [Elyos, Asmodianos]]
 		"ativos":     ativos, // nível 45 cujo CP mudou nos últimos 30 dias
+	}, false)
+}
+
+// cpPorGS: CP típico (mediana) por faixa de 100 de Item Level, geral e por classe, para a Calculadora de Build.
+// Também os marcos do LatAm (top 100 e top 1.000) e mediana/top 10% por classe, com a cobertura da amostra.
+func cpPorGS(a [][3]int, n45 int) {
+	med := func(v []int) int {
+		sort.Ints(v)
+		return v[len(v)/2]
+	}
+	curva := func(f func([3]int) bool, minimo int) [][3]int {
+		g := map[int][]int{}
+		for _, x := range a {
+			if f(x) {
+				b := x[0] / 100 * 100
+				g[b] = append(g[b], x[1])
+			}
+		}
+		var ks []int
+		for k, v := range g {
+			if len(v) >= minimo {
+				ks = append(ks, k)
+			}
+		}
+		sort.Ints(ks)
+		var out [][3]int
+		mx := 0
+		for _, k := range ks {
+			m := med(append([]int(nil), g[k]...))
+			if m < mx {
+				m = mx // a curva só sobe
+			}
+			mx = m
+			out = append(out, [3]int{k + 50, m, len(g[k])})
+		}
+		return out
+	}
+	cls := map[string]any{}
+	pc := map[string][]int{}
+	for c := 2; c <= 9; c++ {
+		cc := c
+		cls[fmt.Sprint(c)] = curva(func(x [3]int) bool { return x[2] == cc }, 10)
+	}
+	var todos []int
+	for _, x := range a {
+		todos = append(todos, x[1])
+		k := fmt.Sprint(x[2])
+		pc[k] = append(pc[k], x[1])
+	}
+	sort.Sort(sort.Reverse(sort.IntSlice(todos)))
+	marco := func(n int) int {
+		if len(todos) >= n {
+			return todos[n-1]
+		}
+		return 0
+	}
+	porCl := map[string][2]int{}
+	for k, v := range pc {
+		if len(v) >= 20 {
+			sort.Ints(v)
+			porCl[k] = [2]int{v[len(v)/2], v[len(v)*9/10]}
+		}
+	}
+	cob := 0.0
+	if n45 > 0 {
+		cob = float64(len(a)) / float64(n45)
+	}
+	gravar("site/cp-por-gs.json", map[string]any{
+		"atualizado": time.Now().UTC().Format(time.RFC3339),
+		"amostra":    len(a),                                       // nível 45 com CP e Item Level conferidos
+		"cobertura":  cob,                                          // parte dos nível 45 do LatAm que já está na amostra
+		"curva":      curva(func([3]int) bool { return true }, 20), // [GS do meio da faixa, CP mediano, quantos]
+		"classes":    cls,
+		"porClasse":  porCl, // classe -> [mediana, top 10%]
+		"top100":     marco(100),
+		"top1000":    marco(1000),
 	}, false)
 }
