@@ -49,10 +49,11 @@ func repetidos(S *Servidor) map[int]int {
 	return r
 }
 func suspeito(p *Pers, rep map[int]int) bool {
-	if p.I > 0 && p.CP > p.I*150 {
-		return true
+	if p.I > 0 {
+		// nos personagens conferidos o CP fica entre 50 e 75 vezes o Item Level
+		return p.CP > p.I*100
 	}
-	return rep[p.CP] >= 3 && !p.K
+	return p.CP >= 300000 || (rep[p.CP] >= 3 && !p.K)
 }
 
 type Servidor struct {
@@ -262,7 +263,7 @@ func cps(sv []aion2.Server) {
 		all[s.ServerID] = &S
 		rp := repetidos(&S)
 		for _, p := range S.P {
-			if p.CP > 0 && rp[p.CP] >= 3 && !p.K {
+			if p.CP > 0 && ((rp[p.CP] >= 3 && !p.K) || (p.I == 0 && p.CP >= 300000) || (p.I > 0 && p.CP > p.I*100)) {
 				p.Q = "" // consulta de novo, na frente da fila
 			}
 		}
