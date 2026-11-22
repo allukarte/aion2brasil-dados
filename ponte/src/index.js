@@ -87,7 +87,13 @@ export default {
             tab[pos] = (d.nodeList || []).filter((n) => n.open === 1 || n.open === true || n.open === "1").map((n) => [n.row, n.col]);
           } catch (e) { tab[pos] = null; }
         }));
-        saida = resposta({ tabuleiros: tab }, 200, origem, 300);
+        // skills do personagem: [nome, categoria (Active/Passive/Dp = Estigma), nível, equipada 1/0]
+        let skills = [];
+        try {
+          const eq = await oficial(SITE + "/api/character/equipment?" + qs({ ...BASE, serverId: sv, characterId: id }));
+          skills = ((eq.skill || {}).skillList || []).map((k) => [k.name, k.category, k.skillLevel, k.equip ? 1 : 0]);
+        } catch (e) {}
+        saida = resposta({ tabuleiros: tab, skills }, 200, origem, 300);
       } else {
         return resposta({ ok: true, uso: ["/busca?nome=", "/ficha?servidor=&id=", "/daevanion?servidor=&id=&classe="] }, 200, origem, 3600);
       }
