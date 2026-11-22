@@ -83,7 +83,7 @@ export default {
         const tab = {};
         await Promise.all([1, 2, 3, 4, 5, 6].map(async (pos) => {
           try {
-            const d = await oficial(SITE + "/api/character/daevanion/detail?" + qs({ ...BASE, serverId: sv, characterId: id, boardId: String(cl * 10 + pos) }));
+            const d = await oficial(SITE + "/api/character/daevanion/detail?" + qs({ ...BASE, serverId: sv, characterId: id, boardId: String((cl - 1) * 10 + pos) }));
             tab[pos] = (d.nodeList || []).filter((n) => n.open === 1 || n.open === true || n.open === "1").map((n) => [n.row, n.col]);
           } catch (e) { tab[pos] = null; }
         }));
