@@ -143,6 +143,10 @@ func main() {
 		patch()
 		return
 	}
+	if modo == "daevanion" {
+		daevanion()
+		return
+	}
 	sv, err := c.Servers(ctx)
 	if err != nil {
 		panic(err)
@@ -687,4 +691,70 @@ func cpPorGS(a [][3]int, n45 int) {
 		"top100":     marco(100),
 		"top1000":    marco(1000),
 	}, false)
+}
+
+// daevanion: monta os tabuleiros de Daevanion de cada classe a partir da ficha oficial
+// de um personagem nível 45 de cada classe (o tabuleiro vem inteiro, com todos os nós).
+// Não guarda nada do personagem, só o desenho do tabuleiro.
+func daevanion() {
+	cli := c
+	var S Servidor
+	if !ler(fmt.Sprintf("estado/%d.json.gz", 1401), &S) {
+		fmt.Println("sem estado de Siel")
+		os.Exit(1)
+	}
+	rp := repetidos(&S)
+	melhor := map[int]string{}
+	cp := map[int]int{}
+	for id, p := range S.P {
+		if p.L >= 45 && p.CP > cp[p.C] && p.I > 0 && !suspeito(p, rp) {
+			melhor[p.C], cp[p.C] = id, p.CP
+		}
+	}
+	type no struct {
+		ID     int      `json:"id"`
+		Nome   string   `json:"nome"`
+		Grau   string   `json:"grau"`
+		Tipo   string   `json:"tipo"`
+		Icone  string   `json:"icone"`
+		Linha  int      `json:"l"`
+		Coluna int      `json:"c"`
+		Efeito []string `json:"efeito"`
+	}
+	type tab struct {
+		ID    int    `json:"id"`
+		Nome  string `json:"nome"`
+		Icone string `json:"icone"`
+		Total int    `json:"total"`
+		Nos   []no   `json:"nos"`
+	}
+	os.MkdirAll("site/daevanion", 0755)
+	for c := 2; c <= 9; c++ {
+		id, ok := melhor[c]
+		if !ok {
+			fmt.Println("sem personagem da classe", c)
+			continue
+		}
+		ref := aion2.CharacterRef{ServerID: 1401, CharacterID: id}
+		ch, err := cli.Character(ctx, ref)
+		if err != nil {
+			fmt.Println("erro ficha", c, err)
+			continue
+		}
+		var tabs []tab
+		for _, b := range ch.Daevanion {
+			d, err := cli.Daevanion(ctx, ref, b.ID)
+			if err != nil {
+				fmt.Println("erro tabuleiro", c, b.ID, err)
+				continue
+			}
+			t := tab{ID: b.ID, Nome: b.Name, Icone: b.IconURL, Total: b.TotalNodes}
+			for _, n := range d.Nodes {
+				t.Nos = append(t.Nos, no{n.ID, n.Name, n.Grade, n.Type, n.IconURL, n.Row, n.Col, []string(n.Effects)})
+			}
+			tabs = append(tabs, t)
+		}
+		gravar(fmt.Sprintf("site/daevanion/%d.json", c), map[string]any{"classe": c, "atualizado": time.Now().UTC().Format(time.RFC3339), "tabuleiros": tabs}, false)
+		fmt.Println("classe", c, "tabuleiros", len(tabs))
+	}
 }
