@@ -32,6 +32,9 @@ jobs:
           ID=$(jq -r '.lista[0].id // empty' ponte/amostras/busca.json); SV=$(jq -r '.lista[0].servidor // empty' ponte/amostras/busca.json)
           [ -n "$ID" ] && curl -s -G "$URL/ficha" --data-urlencode "servidor=$SV" --data-urlencode "id=$ID" | jq . > ponte/amostras/ficha.json || true
           head -c 3000 ponte/amostras/ficha.json || true
+          CL=$(jq -r '(.info.daevanion.boardList[0].id / 10 | floor) // empty' ponte/amostras/ficha.json)
+          echo "classe $CL"
+          [ -n "$ID" ] && curl -s -G "$URL/daevanion" --data-urlencode "servidor=$SV" --data-urlencode "id=$ID" --data-urlencode "classe=$CL" | jq -c '.tabuleiros|to_entries|map([.key,(.value|length)])' | tee ponte/amostras/daevanion.txt || true
       - name: Guardar amostras
         if: always()
         run: |

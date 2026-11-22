@@ -76,8 +76,20 @@ export default {
         const [info, equip] = await Promise.all([oficial(SITE + "/api/character/info?" + p), oficial(SITE + "/api/character/equipment?" + p).catch(() => null)]);
         if (!info.profile || !info.profile.characterId) return resposta({ erro: "personagem não encontrado" }, 404, origem, 60);
         saida = resposta({ info, equip }, 200, origem, 600);
+      } else if (u.pathname === "/daevanion") {
+        // nós abertos dos 6 tabuleiros de Daevanion: { "1": [[linha, coluna], ...], ... }
+        const sv = u.searchParams.get("servidor"), id = u.searchParams.get("id") || "", cl = +(u.searchParams.get("classe") || 0);
+        if (!/^\d{4}$/.test(sv || "") || !/^[A-Za-z0-9_\-=]{10,80}$/.test(id) || cl < 2 || cl > 9) return resposta({ erro: "servidor, id e classe" }, 400, origem);
+        const tab = {};
+        await Promise.all([1, 2, 3, 4, 5, 6].map(async (pos) => {
+          try {
+            const d = await oficial(SITE + "/api/character/daevanion/detail?" + qs({ ...BASE, serverId: sv, characterId: id, boardId: String(cl * 10 + pos) }));
+            tab[pos] = (d.nodeList || []).filter((n) => n.open === 1 || n.open === true || n.open === "1").map((n) => [n.row, n.col]);
+          } catch (e) { tab[pos] = null; }
+        }));
+        saida = resposta({ tabuleiros: tab }, 200, origem, 300);
       } else {
-        return resposta({ ok: true, uso: ["/busca?nome=", "/ficha?servidor=&id="] }, 200, origem, 3600);
+        return resposta({ ok: true, uso: ["/busca?nome=", "/ficha?servidor=&id=", "/daevanion?servidor=&id=&classe="] }, 200, origem, 3600);
       }
     } catch (e) {
       return resposta({ erro: String(e.message || e) }, 502, origem);
