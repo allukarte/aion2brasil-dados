@@ -33,6 +33,26 @@ type Pers struct {
 	Q  string `json:"q,omitempty"` // dia da última consulta do CP (AAAA-MM-DD)
 	V  string `json:"v"`           // dia em que apareceu na lista
 	M  string `json:"m,omitempty"` // último dia em que o CP mudou (sinal de que a pessoa está jogando)
+	I  int    `json:"i,omitempty"` // Item Level (GS) na última consulta
+	K  bool   `json:"k,omitempty"` // CP confirmado: duas consultas seguidas deram o mesmo valor
+}
+
+// suspeito: o site oficial às vezes devolve o mesmo CP para vários personagens diferentes,
+// ou um CP impossível para o Item Level. Esses ficam fora do ranking até uma nova consulta confirmar.
+func repetidos(S *Servidor) map[int]int {
+	r := map[int]int{}
+	for _, p := range S.P {
+		if p.CP > 0 {
+			r[p.CP]++
+		}
+	}
+	return r
+}
+func suspeito(p *Pers, rep map[int]int) bool {
+	if p.I > 0 && p.CP > p.I*150 {
+		return true
+	}
+	return rep[p.CP] >= 3 && !p.K
 }
 
 type Servidor struct {
@@ -240,6 +260,12 @@ func cps(sv []aion2.Server) {
 			continue
 		}
 		all[s.ServerID] = &S
+		rp := repetidos(&S)
+		for _, p := range S.P {
+			if p.CP > 0 && rp[p.CP] >= 3 && !p.K {
+				p.Q = "" // consulta de novo, na frente da fila
+			}
+		}
 		for id, p := range S.P {
 			if p.L >= 45 && (p.Q == "" || dias(p.Q) >= 6) {
 				fila = append(fila, alvo{s.ServerID, id, p.Q})
@@ -263,6 +289,12 @@ func cps(sv []aion2.Server) {
 				if err == nil {
 					if p.CP > 0 && ch.Profile.CombatPower != p.CP {
 						p.M = hoje
+					}
+					p.K = p.CP > 0 && ch.Profile.CombatPower == p.CP
+					for _, st := range ch.Stats {
+						if st.Type == "ItemLevel" {
+							p.I = st.Value
+						}
 					}
 					p.CP, p.T, p.G, p.L, p.N = ch.Profile.CombatPower, ch.Profile.TitleName, ch.Profile.GuildName, ch.Profile.Level, ch.Profile.Name
 					n++
@@ -310,6 +342,7 @@ func saida(sv []aion2.Server) {
 		faixa := map[string]int{}
 		cpc := map[int][]int{}
 		com := 0
+		rp := repetidos(&S)
 		for _, p := range S.P {
 			cl[p.C]++
 			switch {
@@ -322,7 +355,7 @@ func saida(sv []aion2.Server) {
 			default:
 				faixa["1-9"]++
 			}
-			if p.L >= 45 && p.CP > 0 && p.Q != "" && dias(p.Q) <= 14 {
+			if p.L >= 45 && p.CP > 0 && p.Q != "" && dias(p.Q) <= 14 && !suspeito(p, rp) {
 				L = append(L, p)
 				cpc[p.C] = append(cpc[p.C], p.CP)
 				com++
@@ -447,6 +480,7 @@ func censoCompleto(sv []aion2.Server) {
 		porCl := map[int]int{}
 		n45 := 0
 		legS := map[string]int{}
+		rp := repetidos(&S)
 		for _, p := range S.P {
 			nc := nomeCl[p.C]
 			if cls[nc] == nil {
@@ -465,7 +499,7 @@ func censoCompleto(sv []aion2.Server) {
 			default:
 				niv[f]["1-9"]++
 			}
-			if p.L < 45 || p.CP <= 0 || p.Q == "" || dias(p.Q) > 30 {
+			if p.L < 45 || p.CP <= 0 || p.Q == "" || dias(p.Q) > 30 || suspeito(p, rp) {
 				continue
 			}
 			if p.M != "" && dias(p.M) <= 30 {
