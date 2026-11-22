@@ -446,7 +446,7 @@ func patch() {
 			lista = append(lista, x)
 			if !vistos[p.ID] {
 				vistos[p.ID] = true
-				if !primeira {
+				if !primeira && time.Since(p.PostedAt) < 72*time.Hour { // nota antiga que aparece de novo na lista não vira aviso
 					novos = append(novos, x)
 				}
 			}
