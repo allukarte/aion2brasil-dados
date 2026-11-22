@@ -5,7 +5,7 @@
       "characterLevel": 45,
       "characterName": "Myrae",
       "className": "Assassino",
-      "combatPower": 208267,
+      "combatPower": 206159,
       "gender": 2,
       "genderName": "Feminino",
       "pcId": 20,
@@ -170,31 +170,6 @@
       "ownedCount": 263,
       "titleList": [
         {
-          "equipCategory": "Etc",
-          "equipStatList": [
-            {
-              "desc": "Redução de Tempo de Recarga +3%"
-            },
-            {
-              "desc": "PV +900"
-            },
-            {
-              "desc": "Vigor +225"
-            }
-          ],
-          "grade": "Unique",
-          "id": 22010061,
-          "name": "Do Inferno e de Volta",
-          "ownedCount": 86,
-          "ownedPercent": 84,
-          "statList": [
-            {
-              "desc": "Bloqueio +10"
-            }
-          ],
-          "totalCount": 102
-        },
-        {
           "equipCategory": "Defense",
           "equipStatList": [
             {
@@ -220,26 +195,51 @@
           "totalCount": 99
         },
         {
-          "equipCategory": "Attack",
+          "equipCategory": "Etc",
           "equipStatList": [
             {
-              "desc": "Amplificação de Dano em JvA +4.5%"
+              "desc": "Recuperação de PV com Poção +400"
             },
             {
-              "desc": "Ataque Adicional +34"
+              "desc": "Velocidade de Movimento +3%"
             },
             {
-              "desc": "Acerto Crítico +68"
+              "desc": "PV +900"
             }
           ],
           "grade": "Unique",
-          "id": 23010021,
-          "name": "Livre das Amarras da Raça",
+          "id": 23010010,
+          "name": "Encontrando a Origem de Zikel",
+          "ownedCount": 86,
+          "ownedPercent": 84,
+          "statList": [
+            {
+              "desc": "PV +120"
+            }
+          ],
+          "totalCount": 102
+        },
+        {
+          "equipCategory": "Attack",
+          "equipStatList": [
+            {
+              "desc": "Amplificação de Dano em JvJ +4%"
+            },
+            {
+              "desc": "Ataque em JvJ +40"
+            },
+            {
+              "desc": "Precisão em JvJ +80"
+            }
+          ],
+          "grade": "Unique",
+          "id": 23020043,
+          "name": "Pisando em Asas Brancas",
           "ownedCount": 91,
           "ownedPercent": 86,
           "statList": [
             {
-              "desc": "Amplificação de Dano em JvA +1%"
+              "desc": "Acerto Crítico em JvJ +10"
             }
           ],
           "totalCount": 106
