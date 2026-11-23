@@ -1,5 +1,5 @@
 {
-"data": "2026-11-21",
+"data": "2026-11-23",
 "paginas": [
 "https://www.aion2brasil.com.br/2025/12/a-historia.html",
 "https://www.aion2brasil.com.br/2025/12/arqueiro-pve-pvp-mista.html",
@@ -84,12 +84,14 @@
 "https://www.aion2brasil.com.br/2026/11/aion2-montarias-onde-farmar-cada-uma-e.html",
 "https://www.aion2brasil.com.br/2026/11/aion2-pedras-divinas-todas-as-51-e-qual.html",
 "https://www.aion2brasil.com.br/2026/11/biblioteca-de-atreia.html",
+"https://www.aion2brasil.com.br/2026/11/busca-de-personagem.html",
 "https://www.aion2brasil.com.br/2026/11/calculadora-de-criacao.html",
 "https://www.aion2brasil.com.br/2026/11/campanhas-em-capitulos.html",
 "https://www.aion2brasil.com.br/2026/11/daevanion-marchuthan.html",
 "https://www.aion2brasil.com.br/2026/11/mapa-de-rotas-de-coleta-aion-2-brasil.html",
 "https://www.aion2brasil.com.br/2026/11/o-que-vem-por-ai-no-aion-2-previsoes.html",
 "https://www.aion2brasil.com.br/2026/11/os-lords-empireos.html",
+"https://www.aion2brasil.com.br/2026/11/otimizador-de-daevanion.html",
 "https://www.aion2brasil.com.br/2026/11/personagens-e-viloes.html",
 "https://www.aion2brasil.com.br/2026/11/planejador-yustiel.html",
 "https://www.aion2brasil.com.br/2026/11/ranking-de-cp-do-latam.html",
@@ -141,10 +143,7 @@
 },
 "https://www.aion2brasil.com.br/2025/12/mapa-interativo.html": {},
 "https://www.aion2brasil.com.br/2026/01/chanter-pve-pvp-mista.html": {
-"Chanter/Cantor (usar Encantador)": 4,
-"HP/MP (usar PV/PM)": 43,
-"Stigma (usar Estigma)": 6,
-"termo velho de atributo": 20
+"Chanter/Cantor (usar Encantador)": 1
 },
 "https://www.aion2brasil.com.br/2026/01/clerigo-pve-pvp-mista.html": {
 "Chanter/Cantor (usar Encantador)": 2
@@ -152,17 +151,16 @@
 "https://www.aion2brasil.com.br/2026/01/daevanion-arqueiro-nezekan-zikel-vaizel.html": {},
 "https://www.aion2brasil.com.br/2026/01/daevanion-assassino-nezekan-zikel.html": {},
 "https://www.aion2brasil.com.br/2026/01/daevanion-chanter-nezekan-zikel-vaizel.html": {
-"Chanter/Cantor (usar Encantador)": 3
+"Chanter/Cantor (usar Encantador)": 1
 },
 "https://www.aion2brasil.com.br/2026/01/daevanion-clerigo-nezekan-zikel-vaizel.html": {},
 "https://www.aion2brasil.com.br/2026/01/elemetalistdaevanion.html": {},
 "https://www.aion2brasil.com.br/2026/01/evento-meta-cabal.html": {},
 "https://www.aion2brasil.com.br/2026/01/guia-do-chanter.html": {
-"Chanter/Cantor (usar Encantador)": 28,
+"Chanter/Cantor (usar Encantador)": 2,
 "dado da Coreia/Taiwan": 2
 },
 "https://www.aion2brasil.com.br/2026/01/guia-do-clerigo.html": {
-"Chanter/Cantor (usar Encantador)": 12,
 "dado da Coreia/Taiwan": 2
 },
 "https://www.aion2brasil.com.br/2026/01/guia-do-feiticeiro.html": {
@@ -224,7 +222,7 @@
 },
 "https://www.aion2brasil.com.br/2026/09/acompanhamento-meta-missao-de-guerra.html": {},
 "https://www.aion2brasil.com.br/2026/09/banco-de-dados-asa.html": {
-"HP/MP (usar PV/PM)": 64,
+"HP/MP (usar PV/PM)": 65,
 "Odyle (usar Od)": 3,
 "termo velho de atributo": 6
 },
@@ -322,6 +320,9 @@
 "https://www.aion2brasil.com.br/2026/11/biblioteca-de-atreia.html": {
 "dado da Coreia/Taiwan": 4
 },
+"https://www.aion2brasil.com.br/2026/11/busca-de-personagem.html": {
+"Mago (usar Feiticeiro)": 1
+},
 "https://www.aion2brasil.com.br/2026/11/calculadora-de-criacao.html": {},
 "https://www.aion2brasil.com.br/2026/11/campanhas-em-capitulos.html": {},
 "https://www.aion2brasil.com.br/2026/11/daevanion-marchuthan.html": {
@@ -336,6 +337,7 @@
 "https://www.aion2brasil.com.br/2026/11/os-lords-empireos.html": {
 "dado da Coreia/Taiwan": 4
 },
+"https://www.aion2brasil.com.br/2026/11/otimizador-de-daevanion.html": {},
 "https://www.aion2brasil.com.br/2026/11/personagens-e-viloes.html": {},
 "https://www.aion2brasil.com.br/2026/11/planejador-yustiel.html": {
 "dado da Coreia/Taiwan": 5
