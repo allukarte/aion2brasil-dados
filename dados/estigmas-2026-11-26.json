@@ -1,0 +1,664 @@
+{
+ "data": "2026-11-26",
+ "top": 30,
+ "classes": {
+  "Gladiador": {
+   "lidos": 30,
+   "cp_min": 243493,
+   "quantas_equipadas": {
+    "0": 1,
+    "3": 1,
+    "4": 5,
+    "5": 23
+   },
+   "uso": [
+    [
+     "Explosão de Ira",
+     29
+    ],
+    [
+     "Postura de Assalto",
+     29
+    ],
+    [
+     "Bênção de Zikel",
+     27
+    ],
+    [
+     "Armadura da Onda",
+     24
+    ],
+    [
+     "Bloqueio Concentrado",
+     15
+    ],
+    [
+     "Espada Vampírica",
+     12
+    ],
+    [
+     "Perseverança",
+     1
+    ],
+    [
+     "Arremesso de Lâmina",
+     1
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Armadura da Onda + Bloqueio Concentrado + Bênção de Zikel + Explosão de Ira + Postura de Assalto",
+     11
+    ],
+    [
+     "Armadura da Onda + Bênção de Zikel + Espada Vampírica + Explosão de Ira + Postura de Assalto",
+     10
+    ],
+    [
+     "Bloqueio Concentrado + Bênção de Zikel + Espada Vampírica + Explosão de Ira + Postura de Assalto",
+     2
+    ],
+    [
+     "Armadura da Onda + Bênção de Zikel + Explosão de Ira + Postura de Assalto",
+     2
+    ],
+    [
+     "Bênção de Zikel + Explosão de Ira + Postura de Assalto",
+     1
+    ],
+    [
+     "Bloqueio Concentrado + Explosão de Ira + Perseverança + Postura de Assalto",
+     1
+    ],
+    [
+     "",
+     1
+    ],
+    [
+     "Armadura da Onda + Arremesso de Lâmina + Explosão de Ira + Postura de Assalto",
+     1
+    ]
+   ]
+  },
+  "Templário": {
+   "lidos": 30,
+   "cp_min": 239081,
+   "quantas_equipadas": {
+    "4": 8,
+    "5": 22
+   },
+   "uso": [
+    [
+     "Armadura Nobre",
+     25
+    ],
+    [
+     "Bandeira do Campo de Batalha",
+     25
+    ],
+    [
+     "Escudo da Proteção",
+     25
+    ],
+    [
+     "Escudo da Perdição",
+     19
+    ],
+    [
+     "Provocação",
+     19
+    ],
+    [
+     "Escudo de Nezekan",
+     12
+    ],
+    [
+     "Punição do Senhor Empíreo",
+     6
+    ],
+    [
+     "Apreensão",
+     5
+    ],
+    [
+     "Armadura Dupla",
+     4
+    ],
+    [
+     "Proteção do Aliado",
+     1
+    ],
+    [
+     "Espada da Execução",
+     1
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Perdição + Escudo da Proteção + Provocação",
+     7
+    ],
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Proteção + Escudo de Nezekan + Provocação",
+     4
+    ],
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Proteção + Provocação + Punição do Senhor Empíreo",
+     3
+    ],
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Perdição + Escudo da Proteção",
+     2
+    ],
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Perdição + Escudo de Nezekan",
+     2
+    ],
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Perdição + Escudo da Proteção + Escudo de Nezekan",
+     1
+    ],
+    [
+     "Armadura Nobre + Escudo da Perdição + Escudo da Proteção + Provocação",
+     1
+    ],
+    [
+     "Armadura Nobre + Bandeira do Campo de Batalha + Escudo da Perdição + Provocação",
+     1
+    ]
+   ]
+  },
+  "Arqueiro": {
+   "lidos": 30,
+   "cp_min": 250250,
+   "quantas_equipadas": {
+    "4": 9,
+    "5": 21
+   },
+   "uso": [
+    [
+     "Arco da Bênção",
+     30
+    ],
+    [
+     "Soberania de Vaizel",
+     30
+    ],
+    [
+     "Flecha de Grifo",
+     28
+    ],
+    [
+     "Fogo de Supressão",
+     28
+    ],
+    [
+     "Flecha Explosiva",
+     22
+    ],
+    [
+     "Sopro da Mãe Natureza",
+     2
+    ],
+    [
+     "Chute Surpresa",
+     1
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Arco da Bênção + Flecha Explosiva + Flecha de Grifo + Fogo de Supressão + Soberania de Vaizel",
+     21
+    ],
+    [
+     "Arco da Bênção + Flecha de Grifo + Fogo de Supressão + Soberania de Vaizel",
+     6
+    ],
+    [
+     "Arco da Bênção + Fogo de Supressão + Soberania de Vaizel + Sopro da Mãe Natureza",
+     1
+    ],
+    [
+     "Arco da Bênção + Chute Surpresa + Soberania de Vaizel + Sopro da Mãe Natureza",
+     1
+    ],
+    [
+     "Arco da Bênção + Flecha Explosiva + Flecha de Grifo + Soberania de Vaizel",
+     1
+    ]
+   ]
+  },
+  "Assassino": {
+   "lidos": 30,
+   "cp_min": 237597,
+   "quantas_equipadas": {
+    "4": 3,
+    "5": 27
+   },
+   "uso": [
+    [
+     "Clone Ilusório",
+     30
+    ],
+    [
+     "Pacto da Celeridade",
+     29
+    ],
+    [
+     "Punhal de Triniel",
+     29
+    ],
+    [
+     "Presa da Besta",
+     24
+    ],
+    [
+     "Postura de Evasão",
+     21
+    ],
+    [
+     "Caminhada nas Sombras",
+     4
+    ],
+    [
+     "Investida Súbita",
+     3
+    ],
+    [
+     "Lançamento de Espada Sombria",
+     3
+    ],
+    [
+     "Corte Espiral",
+     2
+    ],
+    [
+     "Pacto da Evasão",
+     1
+    ],
+    [
+     "Passo Sombrio",
+     1
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Clone Ilusório + Pacto da Celeridade + Postura de Evasão + Presa da Besta + Punhal de Triniel",
+     19
+    ],
+    [
+     "Clone Ilusório + Investida Súbita + Pacto da Celeridade + Presa da Besta + Punhal de Triniel",
+     3
+    ],
+    [
+     "Clone Ilusório + Pacto da Celeridade + Presa da Besta + Punhal de Triniel",
+     2
+    ],
+    [
+     "Caminhada nas Sombras + Clone Ilusório + Lançamento de Espada Sombria + Pacto da Celeridade + Punhal de Triniel",
+     2
+    ],
+    [
+     "Clone Ilusório + Lançamento de Espada Sombria + Pacto da Celeridade + Postura de Evasão + Punhal de Triniel",
+     1
+    ],
+    [
+     "Caminhada nas Sombras + Clone Ilusório + Corte Espiral + Pacto da Evasão + Passo Sombrio",
+     1
+    ],
+    [
+     "Caminhada nas Sombras + Clone Ilusório + Corte Espiral + Pacto da Celeridade + Punhal de Triniel",
+     1
+    ],
+    [
+     "Clone Ilusório + Pacto da Celeridade + Postura de Evasão + Punhal de Triniel",
+     1
+    ]
+   ]
+  },
+  "Espiritualista": {
+   "lidos": 30,
+   "cp_min": 233039,
+   "quantas_equipadas": {
+    "4": 10,
+    "5": 20
+   },
+   "uso": [
+    [
+     "Invocação: Espírito Ancestral",
+     30
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito",
+     29
+    ],
+    [
+     "Bênção do Fogo Ardente",
+     29
+    ],
+    [
+     "Ataque Conjunto: Corrosão",
+     28
+    ],
+    [
+     "Sucção",
+     10
+    ],
+    [
+     "Ataque Conjunto: Ofensiva da Perdição",
+     9
+    ],
+    [
+     "Comando: Substituto",
+     3
+    ],
+    [
+     "Terror do Ataque Súbito",
+     2
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Aprimoramento: Bendição do Espírito + Ataque Conjunto: Corrosão + Ataque Conjunto: Ofensiva da Perdição + Bênção do Fogo Ardente + Invocação: Espírito Ancestral",
+     9
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito + Ataque Conjunto: Corrosão + Bênção do Fogo Ardente + Invocação: Espírito Ancestral",
+     7
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito + Ataque Conjunto: Corrosão + Bênção do Fogo Ardente + Invocação: Espírito Ancestral + Sucção",
+     7
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito + Ataque Conjunto: Corrosão + Bênção do Fogo Ardente + Invocação: Espírito Ancestral + Terror do Ataque Súbito",
+     2
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito + Ataque Conjunto: Corrosão + Bênção do Fogo Ardente + Comando: Substituto + Invocação: Espírito Ancestral",
+     2
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito + Comando: Substituto + Invocação: Espírito Ancestral + Sucção",
+     1
+    ],
+    [
+     "Ataque Conjunto: Corrosão + Bênção do Fogo Ardente + Invocação: Espírito Ancestral + Sucção",
+     1
+    ],
+    [
+     "Aprimoramento: Bendição do Espírito + Bênção do Fogo Ardente + Invocação: Espírito Ancestral + Sucção",
+     1
+    ]
+   ]
+  },
+  "Feiticeiro": {
+   "lidos": 30,
+   "cp_min": 241517,
+   "quantas_equipadas": {
+    "4": 4,
+    "5": 26
+   },
+   "uso": [
+    [
+     "Aprimoramento Elemental",
+     30
+    ],
+    [
+     "Explosão Tardia",
+     24
+    ],
+    [
+     "Barreira de Fogo",
+     23
+    ],
+    [
+     "Escudo Protetivo de Aço",
+     21
+    ],
+    [
+     "Tempestade Gélida",
+     21
+    ],
+    [
+     "Golpe Potente Glacial",
+     10
+    ],
+    [
+     "Armadura Ártica",
+     7
+    ],
+    [
+     "Hibernação",
+     7
+    ],
+    [
+     "Maldição: Árvore",
+     2
+    ],
+    [
+     "Bombardeio Súbito",
+     1
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Aprimoramento Elemental + Barreira de Fogo + Escudo Protetivo de Aço + Explosão Tardia + Tempestade Gélida",
+     12
+    ],
+    [
+     "Aprimoramento Elemental + Barreira de Fogo + Explosão Tardia + Golpe Potente Glacial + Tempestade Gélida",
+     7
+    ],
+    [
+     "Aprimoramento Elemental + Armadura Ártica + Escudo Protetivo de Aço + Hibernação",
+     3
+    ],
+    [
+     "Aprimoramento Elemental + Armadura Ártica + Escudo Protetivo de Aço + Hibernação + Maldição: Árvore",
+     2
+    ],
+    [
+     "Aprimoramento Elemental + Barreira de Fogo + Escudo Protetivo de Aço + Explosão Tardia + Golpe Potente Glacial",
+     2
+    ],
+    [
+     "Aprimoramento Elemental + Armadura Ártica + Escudo Protetivo de Aço + Golpe Potente Glacial + Hibernação",
+     1
+    ],
+    [
+     "Aprimoramento Elemental + Barreira de Fogo + Explosão Tardia + Tempestade Gélida",
+     1
+    ],
+    [
+     "Aprimoramento Elemental + Armadura Ártica + Escudo Protetivo de Aço + Explosão Tardia + Hibernação",
+     1
+    ]
+   ]
+  },
+  "Clérigo": {
+   "lidos": 30,
+   "cp_min": 238384,
+   "quantas_equipadas": {
+    "2": 1,
+    "4": 5,
+    "5": 23,
+    "6": 1
+   },
+   "uso": [
+    [
+     "Oração da Amplificação",
+     27
+    ],
+    [
+     "Punição da Terra",
+     26
+    ],
+    [
+     "Aura Nobre",
+     23
+    ],
+    [
+     "Luz da Proteção",
+     16
+    ],
+    [
+     "Soberania de Yustiel",
+     12
+    ],
+    [
+     "Voz da Perdição",
+     10
+    ],
+    [
+     "Salvação",
+     9
+    ],
+    [
+     "Ressurreição por Invocação",
+     6
+    ],
+    [
+     "Absolvição",
+     5
+    ],
+    [
+     "Soberania da Vida",
+     4
+    ],
+    [
+     "Marca do Ataque Súbito",
+     3
+    ],
+    [
+     "Explosão da Soberania",
+     2
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Aura Nobre + Luz da Proteção + Oração da Amplificação + Punição da Terra + Voz da Perdição",
+     5
+    ],
+    [
+     "Aura Nobre + Luz da Proteção + Marca do Ataque Súbito + Oração da Amplificação + Punição da Terra",
+     3
+    ],
+    [
+     "Aura Nobre + Luz da Proteção + Oração da Amplificação + Punição da Terra + Ressurreição por Invocação",
+     2
+    ],
+    [
+     "Aura Nobre + Oração da Amplificação + Punição da Terra + Salvação + Soberania de Yustiel",
+     2
+    ],
+    [
+     "Luz da Proteção + Oração da Amplificação + Salvação + Soberania de Yustiel",
+     1
+    ],
+    [
+     "Aura Nobre + Luz da Proteção + Oração da Amplificação + Salvação + Voz da Perdição",
+     1
+    ],
+    [
+     "Aura Nobre + Oração da Amplificação + Punição da Terra + Voz da Perdição",
+     1
+    ],
+    [
+     "Absolvição + Salvação + Soberania da Vida + Soberania de Yustiel + Voz da Perdição",
+     1
+    ]
+   ]
+  },
+  "Encantador": {
+   "lidos": 30,
+   "cp_min": 244924,
+   "quantas_equipadas": {
+    "3": 1,
+    "4": 6,
+    "5": 22,
+    "7": 1
+   },
+   "uso": [
+    [
+     "Mantra do Imbatível",
+     30
+    ],
+    [
+     "Bênção da Guarda",
+     28
+    ],
+    [
+     "Soberania do Vendaval",
+     28
+    ],
+    [
+     "Fúria de Marchutan",
+     22
+    ],
+    [
+     "Mantra da Disparada",
+     17
+    ],
+    [
+     "Defesa Concentrada",
+     6
+    ],
+    [
+     "Golpe Fraturante",
+     6
+    ],
+    [
+     "Impacto do Ataque Súbito",
+     3
+    ],
+    [
+     "Soberania do Bloqueio",
+     2
+    ],
+    [
+     "Marca de Aprisionamento",
+     1
+    ],
+    [
+     "Feitiço da Barreira",
+     1
+    ]
+   ],
+   "combinacoes": [
+    [
+     "Bênção da Guarda + Fúria de Marchutan + Mantra da Disparada + Mantra do Imbatível + Soberania do Vendaval",
+     9
+    ],
+    [
+     "Bênção da Guarda + Defesa Concentrada + Mantra da Disparada + Mantra do Imbatível + Soberania do Vendaval",
+     4
+    ],
+    [
+     "Bênção da Guarda + Fúria de Marchutan + Mantra do Imbatível + Soberania do Vendaval",
+     2
+    ],
+    [
+     "Bênção da Guarda + Fúria de Marchutan + Impacto do Ataque Súbito + Mantra do Imbatível + Soberania do Vendaval",
+     2
+    ],
+    [
+     "Bênção da Guarda + Fúria de Marchutan + Mantra do Imbatível + Marca de Aprisionamento + Soberania do Vendaval",
+     1
+    ],
+    [
+     "Fúria de Marchutan + Golpe Fraturante + Mantra do Imbatível + Soberania do Vendaval",
+     1
+    ],
+    [
+     "Bênção da Guarda + Golpe Fraturante + Impacto do Ataque Súbito + Mantra do Imbatível + Soberania do Vendaval",
+     1
+    ],
+    [
+     "Fúria de Marchutan + Mantra do Imbatível + Soberania do Vendaval",
+     1
+    ]
+   ]
+  }
+ }
+}
